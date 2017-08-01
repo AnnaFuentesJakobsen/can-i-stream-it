@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { getApiConfiguration } from '../utils/api'
 import PosterPlaceholder from '../assets/poster-placeholder.jpg'
+import { Link } from 'react-router-dom'
 
 class SearchResults extends React.Component {
 
@@ -14,7 +15,6 @@ class SearchResults extends React.Component {
 
   componentDidMount () {
     getApiConfiguration().then(function(data){
-      console.log(data);
       this.setState({imageConfig: data.images})
     }.bind(this))
   }
@@ -35,7 +35,7 @@ class SearchResults extends React.Component {
                   :
                   <img className="poster-searchresult" src={PosterPlaceholder}/>
                 }
-                {result.original_title} ({releaseYear})
+                <Link to={`/movie/${result.id}`}>{result.original_title} ({releaseYear})</Link>
               </div>
             )
           })
