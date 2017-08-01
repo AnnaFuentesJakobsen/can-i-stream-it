@@ -1,33 +1,19 @@
 import React, { Component } from 'react';
 import SearchBar from './components/Search-bar';
-import {searchMovie} from './utils/api'
-
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Home from './routes/Home'
+import Movie from './routes/Movie'
 
 class App extends Component {
-
-  constructor() {
-    super()
-    this.state = {searchResults: []}
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange (e) {
-    searchMovie(e.target.value)
-  }
-  /*
-  handleChange (e) {
-    searchMovie(e.target.value).then(function(data) {
-      this.setState({searchResults: data})
-    }.bind(this))
-  }
-  */
-
   render() {
     return (
-      <div>
-        <SearchBar />
-        <input onChange={this.handleChange} />
-      </div>
+      <Router>
+        <div>
+          <SearchBar />
+          <Route path="/" component={Home} exact/>
+          <Route path="/movie/:movieId" component={Movie}/>
+        </div>
+      </Router>
     );
   }
 }
