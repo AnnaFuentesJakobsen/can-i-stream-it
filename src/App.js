@@ -12,10 +12,15 @@ class App extends Component {
   }
 
   handleChange (e) {
+    searchMovie(e.target.value)
+  }
+  /*
+  handleChange (e) {
     searchMovie(e.target.value).then(function(data) {
       this.setState({searchResults: data})
     }.bind(this))
   }
+  */
 
   render() {
     return (
