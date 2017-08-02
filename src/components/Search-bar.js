@@ -40,6 +40,7 @@ class SearchBar extends Component {
         <SearchResults
           results={this.state.searchResults}
           clearSearchField={this.clearSearchField}
+          imageConfig={this.props.imageConfig}
         />
     </div>
     );

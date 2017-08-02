@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { getApiConfiguration } from '../utils/api'
 import PosterPlaceholder from '../assets/poster-placeholder.jpg'
 import { Route } from 'react-router-dom'
 
@@ -7,18 +6,7 @@ class SearchResults extends React.Component {
 
   constructor () {
     super()
-
-    this.state = {
-      imageConfig: {}
-    }
-
     this.routeToMovie = this.routeToMovie.bind(this)
-  }
-
-  componentDidMount () {
-    getApiConfiguration().then(function(data){
-      this.setState({imageConfig: data.images})
-    }.bind(this))
   }
 
   routeToMovie (history, id) {
@@ -28,7 +16,7 @@ class SearchResults extends React.Component {
 
   render () {
     let results = this.props.results
-    let imgCfg = this.state.imageConfig
+    let imgCfg = this.props.imageConfig
     return (
 
         <div className="search-results-list">
@@ -38,8 +26,8 @@ class SearchResults extends React.Component {
               const releaseYear = result.release_date !== '' ? new Date(result.release_date).getFullYear(): '????'
               return (
 
-                <Route render={({ history}) => (
-                  <div key={result.id} className="results-item" onClick={() => {this.routeToMovie(history, result.id)}}>
+                <Route key={result.id} render={({ history}) => (
+                  <div className="results-item" onClick={() => {this.routeToMovie(history, result.id)}}>
                     {result.poster_path !== null ?
                       <img src={imgCfg.base_url + imgCfg.poster_sizes[0] + result.poster_path} />
                       :
