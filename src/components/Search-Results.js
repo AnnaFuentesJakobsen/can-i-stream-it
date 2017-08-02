@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { getApiConfiguration } from '../utils/api'
 import PosterPlaceholder from '../assets/poster-placeholder.jpg'
-import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 class SearchResults extends React.Component {
 
@@ -11,6 +11,8 @@ class SearchResults extends React.Component {
     this.state = {
       imageConfig: {}
     }
+
+    this.routeToMovie = this.routeToMovie.bind(this)
   }
 
   componentDidMount () {
@@ -19,28 +21,37 @@ class SearchResults extends React.Component {
     }.bind(this))
   }
 
+  routeToMovie (history, id) {
+    history.push(`/movie/${id}`)
+    this.props.clearSearchField()
+  }
+
   render () {
     let results = this.props.results
     let imgCfg = this.state.imageConfig
     return (
-      <div>
-        {
-          results !== undefined &&
-          results.map(function(result) {
-            const releaseYear = result.release_date !== '' ? new Date(result.release_date).getFullYear(): '????'
-            return (
-              <div key={result.id}>
-                {result.poster_path !== null ?
-                  <img className="poster-searchresult" src={imgCfg.base_url + imgCfg.poster_sizes[0] + result.poster_path} />
-                  :
-                  <img className="poster-searchresult" src={PosterPlaceholder}/>
-                }
-                <Link to={`/movie/${result.id}`}>{result.original_title} ({releaseYear})</Link>
-              </div>
-            )
-          })
-        }
-      </div>
+
+        <div className="search-results-list">
+          {
+            results !== undefined &&
+            results.map(function(result) {
+              const releaseYear = result.release_date !== '' ? new Date(result.release_date).getFullYear(): '????'
+              return (
+
+                <Route render={({ history}) => (
+                  <div key={result.id} className="results-item" onClick={() => {this.routeToMovie(history, result.id)}}>
+                    {result.poster_path !== null ?
+                      <img src={imgCfg.base_url + imgCfg.poster_sizes[0] + result.poster_path} />
+                      :
+                      <img src={PosterPlaceholder}/>
+                    }
+                    <p>{result.original_title} ({releaseYear})</p>
+                  </div>
+                )} />
+              )
+            }.bind(this))
+          }
+        </div>
     )
   }
 }

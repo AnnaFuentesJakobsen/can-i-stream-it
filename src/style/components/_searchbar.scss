@@ -1,0 +1,29 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input {
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+.search-results-list {
+  width: 50%;
+  border: 1px solid rgb(196, 193, 194);
+  .results-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    p {
+      cursor: default;
+    }
+    img {
+      width: 40px;
+    }
+    &:hover {
+      background-color: rgb(209, 204, 205);
+    }
+  }
+}

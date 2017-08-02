@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAK;EACH,gBAAgB,EAAE,GAAG",
-"sources": ["style.scss"],
+"mappings": "AACE,iBAAM;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,IAAI;;AAMb,sCAAI;EACF,KAAK,EAAE,IAAI",
+"sources": ["components/_searchbar.scss"],
 "names": [],
 "file": "style.css"
 }

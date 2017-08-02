@@ -1,4 +1,22 @@
-body {
-  background-color: red; }
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .search-bar input {
+    width: 50%;
+    font-size: 20px;
+    padding: 10px; }
 
-/*# sourceMappingURL=style.css.map */
+.search-results-list {
+  width: 50%;
+  border: 1px solid #c4c1c2; }
+  .search-results-list .results-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    .search-results-list .results-item p {
+      cursor: default; }
+    .search-results-list .results-item img {
+      width: 40px; }
+    .search-results-list .results-item:hover {
+      background-color: #d1cccd; }
