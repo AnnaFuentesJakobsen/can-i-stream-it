@@ -15,22 +15,21 @@ export function searchMovie(movieTitle){
 }
 
 export function checkStreamingSite(movieTitle){
-
-  const p2 = fetch(BASE_URL_ITUNES + movieTitle + '&entity=movie').then(function(response) {
+  const itunesData = fetch(BASE_URL_ITUNES + movieTitle + '&entity=movie').then(function(response) {
     //debugger
     return response.json()
   }).then(function(data) {
     return data.results
   })
 
-  const p3 = fetch(BASE_URL_NETFLIX + movieTitle).then(function(response) {
+  const netflixData = fetch(BASE_URL_NETFLIX + movieTitle).then(function(response) {
      return response.json()
   }).then(function(data) {
     return data
   })
 
-  Promise.all([p2,p3]).then(values => {
-    console.log(values);
+   return Promise.all([itunesData,netflixData]).then(values => {
+    return values
   });
 }
 
@@ -49,5 +48,3 @@ export function getApiConfiguration() {
     return data
   })
 }
-
-

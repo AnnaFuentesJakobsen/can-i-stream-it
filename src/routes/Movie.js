@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getMovieInfo, checkStreamingSite } from '../utils/api'
+import StreamingBox from '../components/streaming-box'
 
 class Movie extends Component {
 
@@ -14,7 +15,6 @@ class Movie extends Component {
   fetchMovie (id) {
     getMovieInfo(id).then(function(data) {
       this.setState({movie: data})
-      checkStreamingSite(data.original_title)
     }.bind(this))
   }
 
@@ -26,7 +26,12 @@ class Movie extends Component {
 
   render() {
     return (
-      <div>{this.state.movie.title}</div>
+      <div>
+        <div>{this.state.movie.title}</div>
+        <StreamingBox
+          movieTitle={this.state.movie.original_title}
+        />
+      </div>
     );
   }
 
