@@ -15,8 +15,8 @@ export function searchMovie(movieTitle){
 }
 
 export function checkStreamingSite(movieTitle){
+
   const itunesData = fetch(BASE_URL_ITUNES + movieTitle + '&entity=movie').then(function(response) {
-    //debugger
     return response.json()
   }).then(function(data) {
     return data.results

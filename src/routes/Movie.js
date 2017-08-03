@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getMovieInfo, checkStreamingSite } from '../utils/api'
 import StreamingBox from '../components/streaming-box'
+import _ from 'underscore'
 
 class Movie extends Component {
 
@@ -14,6 +15,8 @@ class Movie extends Component {
 
   fetchMovie (id) {
     getMovieInfo(id).then(function(data) {
+      console.log(data)
+
       this.setState({movie: data})
     }.bind(this))
   }
@@ -25,16 +28,35 @@ class Movie extends Component {
   }
 
   render() {
+    const {title, release_date, tagline, overview, genres} = this.state.movie
+
+    const genreNames = _.map(genres, function(item) {
+      return <li key={item.name}>{item.name}</li>
+    })
+
+    /*
+    const genreNames = genres && genres.map(function(item) {
+      return item.name
+    })
+
+    const listItem = genres && genreNames.map(function(genre) {
+      return <li key={genre}>{genre}</li>
+    })
+    */
+
     return (
       <div>
-        <div>{this.state.movie.title}</div>
+        <div>{title}</div>
+        <div>{release_date}</div>
+        <div>{tagline}</div>
+        <div>{overview}</div>
+        <ul>{genreNames /*listItem*/}</ul>
         <StreamingBox
           movieTitle={this.state.movie.original_title}
         />
       </div>
     );
   }
-
 }
 
 export default Movie;
