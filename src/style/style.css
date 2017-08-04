@@ -14,28 +14,23 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,700|Quicksand");
 body {
-  font-family: 'Quicksand', sans-serif; }
-
-body:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-image: url(../assets/cinema.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 0;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+  font-family: 'Quicksand', sans-serif;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
-  z-index: -1; }
+  background-image: url(../assets/cinema.png);
+  background-size: cover; }
+  body:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
+    background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .6;
+    z-index: -1; }
 
 ul {
   padding: 0; }
@@ -63,6 +58,12 @@ h1 {
   justify-content: center;
   align-items: normal;
   color: #B3E6A6; }
+
+.home-container h1 {
+  font-size: 100px; }
+
+.home-container span {
+  background-color: pink; }
 
 .search-bar {
   display: flex;

@@ -23,9 +23,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <h1>Can I Stream It?</h1>
-          <SearchBar imageConfig={this.state.imageConfig} />
-          <Route path="/" component={Home} exact/>
+          <Route path="/" exact component={(props) => <Home {...props} imageConfig={this.state.imageConfig} />} />
           <Route path="/movie/:movieId" component={(props) => <Movie {...props} imageConfig={this.state.imageConfig} />} />
         </div>
       </Router>
