@@ -18,8 +18,7 @@ class SearchResults extends React.Component {
     let results = this.props.results
     let imgCfg = this.props.imageConfig
     return (
-
-        <div className="search-results-list">
+        <div className="search-results-list" style={{opacity: results === undefined || results.length === 0 ? 0 : 1}}>
           {
             results !== undefined &&
             results.map(function(result) {

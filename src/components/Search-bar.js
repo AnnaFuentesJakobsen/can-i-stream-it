@@ -36,6 +36,7 @@ class SearchBar extends Component {
           placeholder="Search movie"
           onChange={this.handleChange}
           value={this.state.searchText}
+          style={{fontFamily: 'Quicksand'}}
         />
         <SearchResults
           results={this.state.searchResults}
