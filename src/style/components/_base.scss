@@ -24,8 +24,8 @@ body:after {
   top: 0;
   left: 0;
 
-  background-image: url(../assets/cinema.png); 
-  background-repeat: no-repeat;  
+  background-image: url(../assets/cinema.png);
+  background-repeat: no-repeat;
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -63,5 +63,3 @@ h1 {
   @include flexbox(flex, row, center, normal);
   color: $font-h1;
 }
-
-
