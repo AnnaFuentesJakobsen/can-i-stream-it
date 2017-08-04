@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getMovieInfo, checkStreamingSite } from '../utils/api'
 import StreamingBox from '../components/streaming-box'
+import SearchBar from '../components/Search-bar';
 import _ from 'underscore'
 
 class Movie extends Component {
@@ -44,6 +45,8 @@ class Movie extends Component {
 
     return (
       <div>
+        <h1><span>Can I Stream It?</span></h1>
+        <SearchBar imageConfig={this.props.imageConfig} />
         <div>{title}</div>
         <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
