@@ -28,7 +28,7 @@ class Movie extends Component {
   }
 
   render() {
-    const {title, release_date, tagline, overview, genres} = this.state.movie
+    const {title, release_date, runtime, tagline, overview, genres} = this.state.movie
 
     const genreNames = _.map(genres, function(item) {
       return <li key={item.name}>{item.name}</li>
@@ -47,8 +47,9 @@ class Movie extends Component {
     return (
       <div>
         <div>{title}</div>
-        <div>{release_date}</div>
-        <div>{tagline}</div>
+        <div>Release date: {release_date}</div>
+        <div>{runtime} min</div>
+        <div><em>{tagline}</em></div>
         <div>{overview}</div>
         <ul>{genreNames /*listItem*/}</ul>
         <StreamingBox

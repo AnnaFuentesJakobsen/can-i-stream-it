@@ -1,1 +1,9 @@
+@import './components/colors';
+@import './components/mixins';
+@import './components/base';
+@import './components/home';
+
 @import './components/searchbar';
+
+// Font 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,700|Quicksand');

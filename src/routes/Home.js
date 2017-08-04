@@ -4,7 +4,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-bg-img">
         <h1>Gooby plz</h1>
       </div>
     );
