@@ -20,33 +20,38 @@ class Movie extends Component {
     }.bind(this))
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     if(this.props.match.params.movieId !== nextProps.match.params.movieId) {
       this.fetchMovie(nextProps.match.params.movieId)
     }
   }
 
   render() {
-    const {title, release_date, runtime, tagline, overview, genres} = this.state.movie
+    const {title, release_date, runtime, tagline, overview, genres, backdrop_path, poster_path} = this.state.movie
+    const imgCfg = this.props.imageConfig
+    console.log(imgCfg);
 
     const genreNames = _.map(genres, function(item) {
       return <li key={item.name}>{item.name}</li>
     })
 
-    /*
-    const genreNames = genres && genres.map(function(item) {
-      return item.name
-    })
-
-    const listItem = genres && genreNames.map(function(genre) {
-      return <li key={genre}>{genre}</li>
-    })
-    */
-
     return (
-      <div>
+      <div className="movie-container">
         <h1><span>Can I Stream It?</span></h1>
         <SearchBar imageConfig={this.props.imageConfig} />
+          <div className="jumbotron">
+            <img
+              src={imgCfg.base_url + 'original' + backdrop_path}
+              className="backdrop-image"
+              />
+            <div className="info-wrapper">
+              <img
+                src={imgCfg.base_url + 'w300' + poster_path}
+                className="poster-image"
+                />
+              <h1>Braveheart</h1>
+            </div>
+          </div>
         <div>{title}</div>
         <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
