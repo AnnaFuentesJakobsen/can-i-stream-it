@@ -25,11 +25,70 @@
     z-index: -1;
   }
 
-
   h1 {
     font-size: 100px;
   }
   span {
     background-color: pink;
   }
+
+  .search-bar {
+  @include flexbox(flex, column, baseline, center);
+  input {
+    color: $font-search-dark;
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+
+    border: 2px solid $border-search;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3pt 2pt $border-search;
+    }
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $font-search-light;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $font-search-light;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $font-search-light;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $font-search-light;
+  }
+}
+
+.search-results-list {
+  width: 50%;
+  border: 4px solid $border-search;
+  position: relative;
+  //top: 139px;
+  border-radius: 25px;
+  background-color: $bg-color;
+  .results-item {
+    @include flexbox(flex, row, flexstart, center);
+    padding: 10px;
+    p {
+      cursor: default;
+      font-size: 20px;
+    }
+    img {
+      width: 50px;
+    }
+    &:hover {
+      background-color: rgba(255,204,204,0.5);
+      border-radius: 10px;
+    }
+  }
+}
+}
+
+.logo {
+  content:url('../assets/LOGO_WHITE.png');
 }
