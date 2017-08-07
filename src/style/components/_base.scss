@@ -16,32 +16,6 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-image: url(../assets/cinema.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 0;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-    opacity: .6;
-    z-index: -1;
-  }
 }
 
 ul {
@@ -52,7 +26,7 @@ ul {
 }
 
 .container {
-  @include flexbox(flex, column, normal, normal);
+  //@include flexbox(flex, column, normal, normal);
 }
 
 /*

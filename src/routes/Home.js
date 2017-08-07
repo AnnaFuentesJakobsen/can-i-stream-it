@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/Search-bar';
+import BgImage from '../assets/cinema.png'
 
 class Home extends Component {
 
   render() {
     return (
       <div className="home-container">
-        <h1>Can I Stream It?</h1>
+        <img src={BgImage} id="bg-img"/>
+        <div className="logo" style={{width:'200px', margin: '0 auto', padding: '20px'}}></div>
         <SearchBar imageConfig={this.props.imageConfig} />
       </div>
     );

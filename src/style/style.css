@@ -14,43 +14,12 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,500,700|Quicksand");
 body {
-  font-family: 'Quicksand', sans-serif;
-  background-image: url(../assets/cinema.png);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 0;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover; }
-  body:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
-    opacity: .6;
-    z-index: -1; }
+  font-family: 'Quicksand', sans-serif; }
 
 ul {
   padding: 0; }
   ul li {
     list-style-type: none; }
-
-.container {
-  display: flex;
-  display: -ms-flexbox;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  justify-content: normal;
-  align-items: normal; }
 
 /*
 ====================================================================
@@ -66,20 +35,43 @@ h1 {
   align-items: normal;
   color: #B3E6A6; }
 
+.home-container #bg-img {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999; }
+
+.home-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
+  background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: .6;
+  z-index: -1; }
+
 .home-container h1 {
   font-size: 100px; }
 
 .home-container span {
   background-color: pink; }
 
-.search-bar {
+.home-container .search-bar {
   display: flex;
   display: -ms-flexbox;
   flex-direction: column;
   -ms-flex-direction: column;
   justify-content: baseline;
   align-items: center; }
-  .search-bar input {
+  .home-container .search-bar input {
     color: #666;
     width: 50%;
     font-size: 20px;
@@ -88,30 +80,29 @@ h1 {
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px; }
-    .search-bar input:focus {
+    .home-container .search-bar input:focus {
       outline: none;
       box-shadow: 0 0 3pt 2pt #FFCCCC; }
-  .search-bar ::-webkit-input-placeholder {
+  .home-container .search-bar ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: #e6e6e6; }
-  .search-bar ::-moz-placeholder {
+  .home-container .search-bar ::-moz-placeholder {
     /* Firefox 19+ */
     color: #e6e6e6; }
-  .search-bar :-ms-input-placeholder {
+  .home-container .search-bar :-ms-input-placeholder {
     /* IE 10+ */
     color: #e6e6e6; }
-  .search-bar :-moz-placeholder {
+  .home-container .search-bar :-moz-placeholder {
     /* Firefox 18- */
     color: #e6e6e6; }
 
-.search-results-list {
+.home-container .search-results-list {
   width: 50%;
   border: 4px solid #FFCCCC;
-  position: absolute;
-  top: 139px;
+  position: relative;
   border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.9); }
-  .search-results-list .results-item {
+  background-color: #333333; }
+  .home-container .search-results-list .results-item {
     display: flex;
     display: -ms-flexbox;
     flex-direction: row;
@@ -119,11 +110,14 @@ h1 {
     justify-content: flexstart;
     align-items: center;
     padding: 10px; }
-    .search-results-list .results-item p {
+    .home-container .search-results-list .results-item p {
       cursor: default;
       font-size: 20px; }
-    .search-results-list .results-item img {
+    .home-container .search-results-list .results-item img {
       width: 50px; }
-    .search-results-list .results-item:hover {
+    .home-container .search-results-list .results-item:hover {
       background-color: rgba(255, 204, 204, 0.5);
       border-radius: 10px; }
+
+.logo {
+  content: url("../assets/LOGO_WHITE.png"); }
