@@ -8,8 +8,10 @@ class Home extends Component {
     return (
       <div className="home-container">
         <img src={BgImage} id="bg-img"/>
-        <div className="logo" style={{width:'200px', margin: '0 auto', padding: '20px'}}></div>
-        <SearchBar imageConfig={this.props.imageConfig} />
+        <div className="home-wrapper">
+          <div className="logo" style={{width:'250px', margin: '0 auto', padding: '20px'}}></div>
+          <SearchBar imageConfig={this.props.imageConfig} />
+        </div>
       </div>
     );
   }

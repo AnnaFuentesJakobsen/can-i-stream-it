@@ -1,5 +1,4 @@
 .home-container {
-  @include flexbox(flex, column, normal, normal);
   #bg-img {
    min-height: 100%;
    min-width: 1024px;
@@ -25,17 +24,17 @@
     opacity: .6;
     z-index: -1;
   }
+}
 
-  h1 {
-    font-size: 100px;
-  }
-  span {
-    background-color: pink;
-  }
-
-
+.home-wrapper {
+  @include flexbox(flex, column, center, center);
+  position: fixed;
+  height: 75%;
+  width: 100%;
 }
 
 .logo {
+  width: 100px;
   content:url('../assets/LOGO_WHITE.png');
 }
+

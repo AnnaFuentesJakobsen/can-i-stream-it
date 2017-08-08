@@ -1,8 +1,7 @@
-  .search-bar {
-  @include flexbox(flex, column, baseline, center);
+.search-bar {
   input {
+    width: 650px;
     color: $font-search-dark;
-    width: 50%;
     font-size: 20px;
     padding: 10px;
 
@@ -31,9 +30,9 @@
 }
 
 .search-results-list {
-  width: 50%;
+  width: 20%;
   border: 4px solid $border-search;
-  position: relative;
+  position: absolute;
   border-radius: 25px;
   background-color: $search-bg-color;
   .results-item {
