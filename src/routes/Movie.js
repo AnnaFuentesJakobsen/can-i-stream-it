@@ -40,18 +40,19 @@ class Movie extends Component {
         <h1><span>Can I Stream It?</span></h1>
         <SearchBar imageConfig={this.props.imageConfig} />
           <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
-          <div className="jumbotron">
-            <div className="info-wrapper">
+          <div className="info-wrapper container-fluid">
+            <div className="row">
               <img
                 src={poster_path !== null ? imgCfg.base_url + 'w300' + poster_path : Placeholder}
-                className="poster-image"
+                className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
                 />
-              <div className="info-content">
+              <div className="info-content col-md-10 col-lg-6">
                   <h1>{title} ({new Date(release_date).getFullYear()})</h1>
-                  <em className="tagline">"{tagline}"</em>
+                  {tagline &&
+                  <em className="tagline">"{tagline}"</em>}
                   <div className="info-row">
                     <div className="votes">
-                      <div className="vote-average">{vote_average}</div>
+                      <div className="vote-average">{vote_average}<small>/ 10</small></div>
                       <div className="vote-count">{vote_count} votes</div>
                     </div>
                     <div className="overview">{overview}</div>
@@ -62,14 +63,15 @@ class Movie extends Component {
               </div>
             </div>
           </div>
-        <div>Release date: {release_date}</div>
+      { /* <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
         <div><em>{tagline}</em></div>
 
-        <ul>{genreNames /*listItem*/}</ul>
+        <ul>{genreNames}</ul>
         <StreamingBox
           movieTitle={this.state.movie.original_title}
         />
+      */}
       </div>
     );
   }
