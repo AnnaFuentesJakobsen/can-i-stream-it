@@ -3,6 +3,7 @@ import { getMovieInfo, checkStreamingSite } from '../utils/api'
 import StreamingBox from '../components/streaming-box'
 import SearchBar from '../components/Search-bar';
 import _ from 'underscore'
+import Placeholder from '../assets/poster-placeholder.jpg'
 
 class Movie extends Component {
 
@@ -27,10 +28,9 @@ class Movie extends Component {
   }
 
   render() {
-    const {title, release_date, runtime, tagline, overview, genres, backdrop_path, poster_path} = this.state.movie
+    const {title, release_date, runtime, tagline, overview, genres, backdrop_path, poster_path, vote_average, vote_count} = this.state.movie
     const imgCfg = this.props.imageConfig
-    console.log(imgCfg);
-
+    console.log(this.state.movie);
     const genreNames = _.map(genres, function(item) {
       return <li key={item.name}>{item.name}</li>
     })
@@ -39,24 +39,33 @@ class Movie extends Component {
       <div className="movie-container">
         <h1><span>Can I Stream It?</span></h1>
         <SearchBar imageConfig={this.props.imageConfig} />
+          <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
           <div className="jumbotron">
-            <img
-              src={imgCfg.base_url + 'original' + backdrop_path}
-              className="backdrop-image"
-              />
             <div className="info-wrapper">
               <img
-                src={imgCfg.base_url + 'w300' + poster_path}
+                src={poster_path !== null ? imgCfg.base_url + 'w300' + poster_path : Placeholder}
                 className="poster-image"
                 />
-              <h1>Braveheart</h1>
+              <div className="info-content">
+                  <h1>{title} ({new Date(release_date).getFullYear()})</h1>
+                  <em className="tagline">"{tagline}"</em>
+                  <div className="info-row">
+                    <div className="votes">
+                      <div className="vote-average">{vote_average}</div>
+                      <div className="vote-count">{vote_count} votes</div>
+                    </div>
+                    <div className="overview">{overview}</div>
+                  </div>
+                  <div className="info-row">
+                    <div></div>
+                  </div>
+              </div>
             </div>
           </div>
-        <div>{title}</div>
         <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
         <div><em>{tagline}</em></div>
-        <div>{overview}</div>
+
         <ul>{genreNames /*listItem*/}</ul>
         <StreamingBox
           movieTitle={this.state.movie.original_title}
