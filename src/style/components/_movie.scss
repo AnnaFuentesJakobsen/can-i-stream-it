@@ -74,8 +74,6 @@
     }
   }
 
-
-
   .search-bar {
     @include flexbox(flex, column, baseline, center);
     input {
@@ -155,4 +153,3 @@
   .poster-image {
     width: 35%;
   }
-}
