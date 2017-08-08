@@ -3,13 +3,12 @@ import SearchBar from '../components/Search-bar';
 import BgImage from '../assets/cinema.png'
 
 class Home extends Component {
-
   render() {
     return (
       <div className="home-container">
         <img src={BgImage} id="bg-img"/>
         <div className="home-wrapper">
-          <div className="logo" style={{width:'250px', margin: '0 auto', padding: '20px'}}></div>
+          <div className="logo" style={{width:'250px', padding: '40px 0'}}></div>
           <SearchBar imageConfig={this.props.imageConfig} />
         </div>
       </div>
