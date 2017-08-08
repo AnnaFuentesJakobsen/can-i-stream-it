@@ -36,9 +36,12 @@ class Movie extends Component {
     })
 
     return (
-      <div className="movie-container">
-        <h1><span>Can I Stream It?</span></h1>
-        <SearchBar imageConfig={this.props.imageConfig} />
+      <div>
+        <div className="movie-wrapper">
+          <div className="logo" style={{width:'100px', padding: '15px 0'}}></div>
+          <SearchBar imageConfig={this.props.imageConfig} />
+        </div>
+        <div className="movie-container">
           <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
           <div className="jumbotron">
             <div className="info-wrapper">
@@ -62,6 +65,7 @@ class Movie extends Component {
               </div>
             </div>
           </div>
+        </div>
         <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
         <div><em>{tagline}</em></div>

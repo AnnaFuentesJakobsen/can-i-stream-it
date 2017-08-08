@@ -30,9 +30,9 @@
 }
 
 .search-results-list {
-  width: 20%;
+  width: 665px;
   border: 4px solid $border-search;
-  position: absolute;
+  position: fixed;
   border-radius: 25px;
   background-color: $search-bg-color;
   .results-item {
