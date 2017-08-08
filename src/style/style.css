@@ -193,9 +193,11 @@ h1 {
   color: #e6e6e6; }
 
 .search-results-list {
+  height: 500px;
   width: 665px;
+  overflow-y: auto;
   border: 4px solid #FFCCCC;
-  position: fixed;
+  position: absolute;
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.9); }
   .search-results-list .results-item {
@@ -214,3 +216,5 @@ h1 {
     .search-results-list .results-item:hover {
       background-color: rgba(255, 204, 204, 0.5);
       border-radius: 10px; }
+  .search-results-list ::-webkit-scrollbar-thumb, .search-results-list ::-webkit-scrollbar-track {
+    height: 90%; }
