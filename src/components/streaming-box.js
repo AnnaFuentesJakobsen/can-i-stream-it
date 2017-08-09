@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { checkStreamingSite } from '../utils/api'
-
+import { TiTick as TickIcon, TiTimes as CrossIcon } from 'react-icons/lib/ti'
+// import { FaSmileO as TickIcon, FaFrownO as CrossIcon } from 'react-icons/lib/fa'
 
 class StreamingBox extends Component {
   constructor (props) {
@@ -25,9 +26,27 @@ class StreamingBox extends Component {
 
   render() {
     return (
-      <div>
-        <p>Itunes: {this.state.itunes.length === 0 ? 'False' : 'true'}</p>
-        <p>Netflix: {this.state.netflix.errorcode !== undefined ? 'false' : 'true'}</p>
+      <div className="streaming-box">
+        <div className="service">
+          <span className="service-name">
+            iTunes:
+          </span>
+          {this.state.itunes.length === 0 ?
+            <CrossIcon className="cross-icon"/>
+            :
+            <TickIcon className="tick-icon"/>
+          }
+        </div>
+        <div className="service">
+          <span className="service-name">
+            Netflix:
+          </span>
+          {this.state.netflix.errorcode !== undefined ?
+            <CrossIcon className="cross-icon"/>
+            :
+            <TickIcon className="tick-icon"/>
+          }
+        </div>
       </div>
     );
   }

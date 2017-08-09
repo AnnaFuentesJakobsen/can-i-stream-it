@@ -26,11 +26,9 @@ class MovieJumbotron extends Component {
                   </div>
                   <div className="overview">{overview}</div>
                 </div>
-                <div className="info-row">
-                  <StreamingBox
-                    movieTitle={original_title}
-                    />
-                </div>
+                <StreamingBox
+                  movieTitle={original_title}
+                  />
             </div>
           </div>
       </div>

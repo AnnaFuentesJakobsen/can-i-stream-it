@@ -1,0 +1,18 @@
+.streaming-box {
+  @include flexbox(flex, row, space-around, center);
+  .service {
+    @include flexbox(flex, row, flex-start, center);
+    .service-name {
+      font-size: 35px;
+      color: $blue-pewrter
+    }
+    .cross-icon {
+      font-size: 100px;
+      color: #de2929;
+    }
+    .tick-icon {
+      font-size: 100px;
+      color: #4dbb26;
+    }
+  }
+}
