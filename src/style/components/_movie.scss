@@ -1,7 +1,7 @@
 .backdrop {
   position: absolute;
   width: 100%;
-  height: 60%;
+  height: 100%;
   z-index: -9999;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -10,11 +10,17 @@
 }
 
 .movie-container {
+  .jumbotron {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
     .info-wrapper {
       margin-top: 50px;
         .poster-image {
           margin-right: 20px;
-          width: auto;
+          width: 15%;
         }
         .info-content {
           h1 {
@@ -64,6 +70,7 @@
         }
     }
   }
+  }
 
 .movie-wrapper {
   @include flexbox(flex, column, center, center);
@@ -71,9 +78,7 @@
 
 //MEDIA QUERIES
 @media (max-width : 1440px) {
-  .backdrop {
-    height: 100%;
-  }
+
   .movie-container {
     .info-wrapper {
       .poster-image {

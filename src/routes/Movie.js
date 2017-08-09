@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { getMovieInfo, checkStreamingSite } from '../utils/api'
-import StreamingBox from '../components/streaming-box'
+
 import SearchBar from '../components/Search-bar';
+import MovieJumbotron from '../components/Movie-Jumbotron'
+
 import _ from 'underscore'
-import Placeholder from '../assets/poster-placeholder.jpg'
 
 class Movie extends Component {
 
@@ -39,30 +40,21 @@ class Movie extends Component {
       <div className="movie-container">
         <h1><span>Can I Stream It?</span></h1>
         <SearchBar imageConfig={this.props.imageConfig} />
-          <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
-          <div className="info-wrapper container-fluid">
-            <div className="row">
-              <img
-                src={poster_path !== null ? imgCfg.base_url + 'w300' + poster_path : Placeholder}
-                className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
-                />
-              <div className="info-content col-md-10 col-lg-6">
-                  <h1>{title} ({new Date(release_date).getFullYear()})</h1>
-                  {tagline &&
-                  <em className="tagline">"{tagline}"</em>}
-                  <div className="info-row">
-                    <div className="votes">
-                      <div className="vote-average">{vote_average}<small>/ 10</small></div>
-                      <div className="vote-count">{vote_count} votes</div>
-                    </div>
-                    <div className="overview">{overview}</div>
-                  </div>
-                  <div className="info-row">
-                    <div></div>
-                  </div>
-              </div>
-            </div>
-          </div>
+        <MovieJumbotron
+          backdrop_path={backdrop_path}
+          imgCfg={imgCfg}
+          poster_path={poster_path}
+          title={title}
+          release_date={release_date}
+          tagline={tagline}
+          vote_average={vote_average}
+          vote_count={vote_count}
+          overview={overview}
+          original_title={this.state.movie.original_title}
+          />
+      <div>
+        HEJ OCH HÅ
+      </div>
       { /* <div>Release date: {release_date}</div>
         <div>{runtime} min</div>
         <div><em>{tagline}</em></div>
