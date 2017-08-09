@@ -10,6 +10,18 @@
 }
 
 .movie-container {
+  .search-bar {
+    @include flexbox(flex, column, center, center);
+    input {
+      width: 60%;
+    }
+    .search-results-list {
+      position: absolute;
+      top: 130px;
+      z-index: 9999;
+      width: 60%;
+    }
+  }
   .jumbotron {
     padding-top: 20px;
     padding-bottom: 20px;
