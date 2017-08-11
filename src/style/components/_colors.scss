@@ -1,5 +1,5 @@
 // Background
-$bg-color: #333333;
+$bg-color: #14213D;
 $search-bg-color: rgba(255,255,255,0.9);
 
 // Fonts
@@ -7,8 +7,14 @@ $font-h1: #B3E6A6;
 $font-search-light: lighten(#666, 50%);
 $font-search-dark: #666;
 
+$font-white: #fff;
+
 // Border
-$border-search: #FFCCCC;
+$base-pink: #FFCCCC;
+$base-pink-dark: darken(#FFCCCC, 10%);
+
+$base-green: #B3E6A6;
+$base-green-dark: darken(#B3E6A6, 70%);
 
 $blue-pewrter: #8CA6BF;
 $red-pastel: #FF6366;

@@ -34,6 +34,7 @@ ul {
 */
 
 h1 {
-  @include flexbox(flex, row, center, normal);
-  color: $font-h1;
+  //@include flexbox(flex, row, center, normal);
+  display: inline;
+  color: $font-white;
 }

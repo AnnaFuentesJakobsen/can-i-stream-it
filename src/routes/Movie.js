@@ -3,6 +3,7 @@ import { getMovieInfo, checkStreamingSite } from '../utils/api'
 
 import SearchBar from '../components/Search-bar';
 import MovieJumbotron from '../components/Movie-Jumbotron'
+import { Link } from 'react-router-dom'
 
 import _ from 'underscore'
 
@@ -38,8 +39,8 @@ class Movie extends Component {
 
     return (
       <div className="movie-container">
-        <h1><span>Can I Stream It?</span></h1>
-        <SearchBar imageConfig={this.props.imageConfig} />
+        <Link to={'/'}><div className="logo"></div></Link>
+        <SearchBar imageConfig={this.props.imageConfig}/>
         <MovieJumbotron
           backdrop_path={backdrop_path}
           imgCfg={imgCfg}

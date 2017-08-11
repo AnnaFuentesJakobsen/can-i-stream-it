@@ -8,15 +8,19 @@
   background-position: top-left;
   filter: opacity(.2) grayscale(75%);
 }
-
 .movie-container {
+  .logo {
+    width: 100px;
+    padding: 10px;
+    margin: 0 auto;
+  }
   .search-bar {
     @include flexbox(flex, column, center, center);
     input {
       width: 60%;
     }
     .search-results-list {
-      position: absolute;
+      position: relative;
       top: 130px;
       z-index: 9999;
       width: 60%;
@@ -28,6 +32,14 @@
     position: relative;
     height: 100%;
     overflow: hidden;
+    h1 {
+      span {
+        //@include flexbox(flex, column, center, center);
+        display: inline;
+        font-size: 40px;
+        line-height: 100%
+      }
+    }
     .info-wrapper {
       margin-top: 50px;
         .poster-image {
@@ -49,14 +61,22 @@
             margin-top: 25px;
             .votes {
               flex-shrink: 0;
-              background-color: black;
-              padding: 15px;
-              margin-right: 10px;
+              padding: 5px;
+              background-color: $base-pink-dark;
+              width: 3vw;
+              height: 3vw;
+              margin-right: 20px;
+              border: 6px solid $base-pink;
               border-radius: 50%;
               text-align: center;
+              .votes-wrapper {
+                margin-top: 15px;
+              }
               .vote-average {
-                color: $font-h1;
-                font-size: 3vw;
+                color: $font-white;
+                width: 3vw;
+                margin-left: 0;
+                font-size: 1vw;
                 small {
                   font-size: 15px;
                   color: $font-search-light;
@@ -65,11 +85,15 @@
               .vote-count {
                 color: $font-h1;
                 font-size: 0.5vw;
+                color: $font-white;
+                opacity: 0.5;
               }
             }
             .overview {
               max-width: 850px;
-              color: #ffffff;
+              color: $font-white;
+              letter-spacing: 1px;
+              line-height: 2em;
             }
             .genre-list {
               li {

@@ -5,14 +5,14 @@
     font-size: 20px;
     padding: 10px;
 
-    border: 2px solid $border-search;
+    border: 2px solid $base-pink;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 3pt 2pt $border-search;
+      box-shadow: 0 0 3pt 2pt $base-pink;
     }
   }
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -33,7 +33,7 @@
   height: 500px;
   width: 665px;
   overflow-y: auto;
-  border: 4px solid $border-search;
+  border: 4px solid $base-pink;
   position: absolute;
   border-radius: 5px;
   background-color: $search-bg-color;

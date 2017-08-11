@@ -16,13 +16,15 @@ class MovieJumbotron extends Component {
               className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
               />
             <div className="info-content col-md-10 col-lg-6">
-                <h1>{title} ({new Date(release_date).getFullYear()})</h1>
+                <h1>{title} <span style={{opacity: '0.5'}}>({new Date(release_date).getFullYear()})</span></h1>
                 {tagline &&
-                <em className="tagline">"{tagline}"</em>}
+                <p><em className="tagline">"{tagline}"</em></p>}
                 <div className="info-row">
                   <div className="votes">
-                    <div className="vote-average">{vote_average}<small>/ 10</small></div>
-                    <div className="vote-count">{vote_count} votes</div>
+                    <div className="votes-wrapper">
+                      <div className="vote-average">{vote_average}<small style={{opacity: '0.5'}}>/ 10</small></div>
+                      <div className="vote-count">{vote_count} votes</div>
+                    </div>
                   </div>
                   <div className="overview">{overview}</div>
                 </div>

@@ -1,17 +1,23 @@
 .streaming-box {
   @include flexbox(flex, row, space-around, center);
+  margin-top: 50px;
+  color: $font-white;
   .service {
     @include flexbox(flex, row, flex-start, center);
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 50px;
+    border: 2px solid $base-pink;
+    border-radius: 60px;
+    padding: 0 40px;
     .service-name {
-      font-size: 35px;
-      color: $blue-pewrter
+      font-size: 25px;
     }
     .cross-icon {
-      font-size: 100px;
+      font-size: 35px;
       color: #de2929;
     }
     .tick-icon {
-      font-size: 100px;
+      font-size: 35px;
       color: #4dbb26;
     }
   }

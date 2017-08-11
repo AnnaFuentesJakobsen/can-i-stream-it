@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { checkStreamingSite } from '../utils/api'
 import { TiTick as TickIcon, TiTimes as CrossIcon } from 'react-icons/lib/ti'
-// import { FaSmileO as TickIcon, FaFrownO as CrossIcon } from 'react-icons/lib/fa'
+//import { FaSmileO as TickIcon, FaFrownO as CrossIcon } from 'react-icons/lib/fa'
 
 class StreamingBox extends Component {
   constructor (props) {
