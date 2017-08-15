@@ -94,8 +94,8 @@ h1 {
   .movie-container .search-bar input {
     width: 60%; }
   .movie-container .search-bar .search-results-list {
-    position: relative;
-    top: 130px;
+    position: absolute;
+    top: 170px;
     z-index: 9999;
     width: 60%; }
 
@@ -275,3 +275,34 @@ h1 {
     .streaming-box .service .tick-icon {
       font-size: 35px;
       color: #4dbb26; }
+
+.starring-box {
+  border: 2px solid #8CA6BF;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  width: 40%; }
+  .starring-box p {
+    font-size: 19px;
+    font-weight: bold; }
+  .starring-box .starring-row {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: space-between;
+    align-items: top; }
+    .starring-box .starring-row .profile-container {
+      width: 25%;
+      height: 100%; }
+      .starring-box .starring-row .profile-container .profile-picture {
+        max-width: 200px;
+        min-width: 200px;
+        max-height: 285px;
+        min-height: 285px; }
+      .starring-box .starring-row .profile-container .character {
+        font-size: 19px;
+        font-weight: bold; }
+
+@media (max-width: 1440px) {
+  .starring-box {
+    width: 100%; } }

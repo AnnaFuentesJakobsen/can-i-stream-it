@@ -1,0 +1,46 @@
+.starring-box {
+  border: 2px solid $blue-pewrter;
+  background-color: rgba(255,255,255,0.5);
+  padding: 10px;
+  width: 40%;
+  p {
+    font-size: 19px;
+    font-weight: bold;
+  }
+  .starring-row {
+    @include flexbox(flex, row, space-between, top);
+    .profile-container {
+      width: 25%;
+      height: 100%;
+      .profile-picture {
+        max-width: 200px;
+        min-width: 200px;
+        max-height: 285px;
+        min-height: 285px;
+      }
+      .character {
+        font-size: 19px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//MEDIA QUERIES
+@media (max-width : 1440px) {
+  .starring-box {
+    width: 100%;
+  }
+}
+@media (max-width : 768px) {
+
+}
+@media (max-width : 480px) {
+
+}
+@media (max-width : 320px) {
+
+}
+@media (max-width : 240px) {
+
+}

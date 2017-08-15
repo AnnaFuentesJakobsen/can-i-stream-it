@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { getMovieInfo, checkStreamingSite } from '../utils/api'
-
-import SearchBar from '../components/Search-bar';
+import { getMovieInfo } from '../utils/api'
+import SearchBar from '../components/Search-bar'
 import MovieJumbotron from '../components/Movie-Jumbotron'
+import StarringBox from '../components/Starring-box'
 import { Link } from 'react-router-dom'
 
 import _ from 'underscore'
@@ -12,14 +12,18 @@ class Movie extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      movie: {}
+      movie: {},
+      castAndCrew: {}
     }
     this.fetchMovie(props.match.params.movieId)
   }
 
   fetchMovie (id) {
     getMovieInfo(id).then(function(data) {
-      this.setState({movie: data})
+      this.setState({
+        movie: data,
+        castAndCrew: data.credits
+      })
     }.bind(this))
   }
 
@@ -32,7 +36,6 @@ class Movie extends Component {
   render() {
     const {title, release_date, runtime, tagline, overview, genres, backdrop_path, poster_path, vote_average, vote_count} = this.state.movie
     const imgCfg = this.props.imageConfig
-    console.log(this.state.movie);
     const genreNames = _.map(genres, function(item) {
       return <li key={item.name}>{item.name}</li>
     })
@@ -53,18 +56,10 @@ class Movie extends Component {
           overview={overview}
           original_title={this.state.movie.original_title}
           />
-      <div>
-        HEJ OCH HÅ
-      </div>
-      { /* <div>Release date: {release_date}</div>
-        <div>{runtime} min</div>
-        <div><em>{tagline}</em></div>
-
-        <ul>{genreNames}</ul>
-        <StreamingBox
-          movieTitle={this.state.movie.original_title}
-        />
-      */}
+        <StarringBox
+          imgCfg={imgCfg}
+          cast={this.state.castAndCrew.cast}
+          />
       </div>
     );
   }
