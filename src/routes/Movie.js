@@ -20,6 +20,7 @@ class Movie extends Component {
 
   fetchMovie (id) {
     getMovieInfo(id).then(function(data) {
+      console.log(data);
       this.setState({
         movie: data,
         castAndCrew: data.credits
