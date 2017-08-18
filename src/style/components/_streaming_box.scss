@@ -22,3 +22,16 @@
     }
   }
 }
+
+@media (max-width : 1440px) {
+  .streaming-box {
+    .service {
+      height: 35px;
+      padding: 0 30px;
+      .service-name {
+        font-size: 20px;
+      }
+    }
+  }
+
+}

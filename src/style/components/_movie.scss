@@ -36,7 +36,7 @@
       span {
         //@include flexbox(flex, column, center, center);
         display: inline;
-        font-size: 40px;
+        font-size: 30px;
         line-height: 100%
       }
     }
@@ -49,7 +49,7 @@
         .info-content {
           h1 {
             justify-content: flex-start;
-            font-size: 3vw;
+            //font-size: 3vw;
             margin: 0px;
           }
           .tagline {
@@ -63,22 +63,23 @@
               flex-shrink: 0;
               padding: 5px;
               background-color: $base-pink-dark;
-              width: 3vw;
-              height: 3vw;
-              margin-right: 20px;
-              border: 6px solid $base-pink;
+              width: 4vw;
+              height: 4vw;
+              margin-right: 30px;
+              border: 5px solid $base-pink;
               border-radius: 50%;
               text-align: center;
+              margin-top: 10px;
               .votes-wrapper {
-                margin-top: 15px;
+                margin-top: 25%;
               }
               .vote-average {
                 color: $font-white;
-                width: 3vw;
+                width: 4vw;
                 margin-left: 0;
                 font-size: 1vw;
                 small {
-                  font-size: 15px;
+                  font-size: 0.6vw;
                   color: $font-search-light;
                 }
               }
@@ -88,9 +89,10 @@
                 color: $font-white;
                 opacity: 0.5;
               }
+              }
             }
             .overview {
-              max-width: 850px;
+              max-width: 1000px;
               color: $font-white;
               letter-spacing: 1px;
               line-height: 2em;
@@ -102,26 +104,53 @@
                 margin-right: 5px;
               }
             }
-          }
         }
     }
   }
   }
 
-.movie-wrapper {
-  @include flexbox(flex, column, center, center);
-}
-
 //MEDIA QUERIES
 @media (max-width : 1440px) {
-
+  .service {
+    background-color: red;
+  }
   .movie-container {
-    .info-wrapper {
-      .poster-image {
-        width: 200px;
+    .jumbotron {
+      h1 {
+        font-size: 30px;
+        span {
+          font-size: 20px;
+        }
+      }
+      .info-wrapper {
+        .info-content {
+          .info-row {
+            .votes {
+              .votes-wrapper {
+                margin-top: 15%;
+                .vote-average {
+                  font-size: 25px;
+                }
+              }
+            }
+          }
+        }
+
       }
     }
   }
+
+
+
+  /*
+  .movie-container {
+    .info-wrapper {
+      .poster-image {
+        width: 400px;
+      }
+    }
+  }
+  */
 }
 @media (max-width : 768px) {
   .movie-container {
@@ -159,3 +188,4 @@
     }
   }
 }
+

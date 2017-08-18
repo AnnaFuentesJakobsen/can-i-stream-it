@@ -13,7 +13,7 @@ class MovieJumbotron extends Component {
           <div className="row">
             <img
               src={poster_path !== null ? imgCfg.base_url + 'w300' + poster_path : Placeholder}
-              className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
+              className="poster-image col-md-2 col-lg-4 col-sm-11 col-lg-offset-2"
               />
             <div className="info-content col-md-10 col-lg-6">
                 <h1>{title} <span style={{opacity: '0.5'}}>({new Date(release_date).getFullYear()})</span></h1>
@@ -26,11 +26,11 @@ class MovieJumbotron extends Component {
                       <div className="vote-count">{vote_count} votes</div>
                     </div>
                   </div>
-                  <div className="overview">{overview}</div>
-                </div>
-                <StreamingBox
-                  movieTitle={original_title}
-                  />
+                <div className="overview">{overview}</div>
+              </div>
+              <StreamingBox
+                movieTitle={original_title}
+                />
             </div>
           </div>
       </div>

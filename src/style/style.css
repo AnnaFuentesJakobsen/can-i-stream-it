@@ -29,6 +29,7 @@ ul {
 ====================================================================
 */
 h1 {
+  font-size: 3em;
   display: inline;
   color: #fff; }
 
@@ -107,7 +108,7 @@ h1 {
   overflow: hidden; }
   .movie-container .jumbotron h1 span {
     display: inline;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 100%; }
   .movie-container .jumbotron .info-wrapper {
     margin-top: 50px; }
@@ -116,7 +117,6 @@ h1 {
       width: 15%; }
     .movie-container .jumbotron .info-wrapper .info-content h1 {
       justify-content: flex-start;
-      font-size: 3vw;
       margin: 0px; }
     .movie-container .jumbotron .info-wrapper .info-content .tagline {
       font-size: 1vw;
@@ -133,48 +133,58 @@ h1 {
         flex-shrink: 0;
         padding: 5px;
         background-color: #ff9999;
-        width: 3vw;
-        height: 3vw;
-        margin-right: 20px;
-        border: 6px solid #FFCCCC;
+        width: 4vw;
+        height: 4vw;
+        margin-right: 30px;
+        border: 5px solid #FFCCCC;
         border-radius: 50%;
-        text-align: center; }
+        text-align: center;
+        margin-top: 10px; }
         .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper {
-          margin-top: 15px; }
+          margin-top: 25%; }
         .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-average {
           color: #fff;
-          width: 3vw;
+          width: 4vw;
           margin-left: 0;
           font-size: 1vw; }
           .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-average small {
-            font-size: 15px;
+            font-size: 0.6vw;
             color: #e6e6e6; }
         .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-count {
           color: #B3E6A6;
           font-size: 0.5vw;
           color: #fff;
           opacity: 0.5; }
-      .movie-container .jumbotron .info-wrapper .info-content .info-row .overview {
-        max-width: 850px;
-        color: #fff;
-        letter-spacing: 1px;
-        line-height: 2em; }
-      .movie-container .jumbotron .info-wrapper .info-content .info-row .genre-list li {
-        color: white;
-        display: inline;
-        margin-right: 5px; }
-
-.movie-wrapper {
-  display: flex;
-  display: -ms-flexbox;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+    .movie-container .jumbotron .info-wrapper .info-content .overview {
+      max-width: 1000px;
+      color: #fff;
+      letter-spacing: 1px;
+      line-height: 2em; }
+    .movie-container .jumbotron .info-wrapper .info-content .genre-list li {
+      color: white;
+      display: inline;
+      margin-right: 5px; }
 
 @media (max-width: 1440px) {
-  .movie-container .info-wrapper .poster-image {
-    width: 200px; } }
+  .service {
+    background-color: red; }
+  .movie-container .jumbotron h1 {
+    font-size: 30px; }
+    .movie-container .jumbotron h1 span {
+      font-size: 20px; }
+  .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper {
+    margin-top: 15%; }
+    .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper .vote-average {
+      font-size: 25px; }
+  /*
+  .movie-container {
+    .info-wrapper {
+      .poster-image {
+        width: 400px;
+      }
+    }
+  }
+  */ }
 
 @media (max-width: 768px) {
   .movie-container .info-wrapper .poster-image {
@@ -275,6 +285,13 @@ h1 {
     .streaming-box .service .tick-icon {
       font-size: 35px;
       color: #4dbb26; }
+
+@media (max-width: 1440px) {
+  .streaming-box .service {
+    height: 35px;
+    padding: 0 30px; }
+    .streaming-box .service .service-name {
+      font-size: 20px; } }
 
 .starring-box {
   border: 2px solid #8CA6BF;
