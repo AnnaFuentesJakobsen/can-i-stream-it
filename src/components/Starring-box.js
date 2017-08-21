@@ -20,18 +20,20 @@ class StarringBox extends Component {
     const imgCfg = this.props.imgCfg
     return (
       <div className="starring-box">
-        <p>Top billed cast</p>
+        <p>Top Billed Cast</p>
         <div className="starring-row">
           {
             starring.map(function(actor) {
               return (
                 <div className="profile-container" key={actor.id}>
-                  <img
-                    className="profile-picture"
-                    src={actor.profile_path !== null ? imgCfg.base_url + 'w300' + actor.profile_path : Placeholder}
-                  />
-                <div className="character">{actor.name}</div>
-                <div>{actor.character}</div>
+                  <div className="img-wrapper">
+                    <img
+                      className="profile-picture"
+                      src={actor.profile_path !== null ? imgCfg.base_url + 'w300' + actor.profile_path : Placeholder}
+                    />
+                  </div>
+                <div className="actor">{actor.name}</div>
+                <div className="character">{actor.character}</div>
                 </div>
               )
             })

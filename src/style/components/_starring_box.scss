@@ -1,38 +1,87 @@
 .starring-box {
-  border: 2px solid $blue-pewrter;
-  background-color: rgba(255,255,255,0.5);
+  color: $font-white;
+  //border: 1px solid $font-white;
+  background: -webkit-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
+  background: -o-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
+  background: linear-gradient(70deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
   padding: 10px;
-  width: 40%;
-  p {
-    font-size: 19px;
-    font-weight: bold;
-  }
-  .starring-row {
-    @include flexbox(flex, row, space-between, top);
-    .profile-container {
-      width: 25%;
-      height: 100%;
-      .profile-picture {
-        max-width: 200px;
-        min-width: 200px;
-        max-height: 285px;
-        min-height: 285px;
-      }
-      .character {
-        font-size: 19px;
-        font-weight: bold;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+    p {
+      margin: 30px 0;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .starring-row {
+      @include flexbox(flex, row, space-between, top);
+      margin-bottom: 25px;
+      .profile-container {
+        margin: 0 auto;
+        text-align: center;
+        .img-wrapper {
+          position: relative;
+          overflow: hidden;
+          margin: 0 auto;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          .profile-picture {
+            max-width: 100px;
+            min-width: 100px;
+            max-height: 130px;
+            min-height: 130px;
+          }
+        }
+        .actor {
+          margin-top: 10px;
+          font-size: 19px;
+          font-weight: bold;
+        }
+        .character {
+          color: $base-green;
+          opacity: 0.8;
+        }
       }
     }
-  }
+  
 }
 
 //MEDIA QUERIES
 @media (max-width : 1440px) {
   .starring-box {
-    width: 100%;
+    width: auto;
+    margin-top: 0;
+    .starring-row {
+      .profile-container {
+
+        .img-wrapper {
+
+          .profile-picture {
+
+            
+          }
+        } 
+      }
+    }
   }
 }
-@media (max-width : 768px) {
+
+@media (max-width: 768px) {
+  .starring-box {
+    .starring-row {
+      .profile-container {
+        margin: 0 10px;
+        .img-wrapper {
+          .profile-picture {
+
+            
+          }
+        } 
+      }
+    }
+  }
 
 }
 @media (max-width : 480px) {

@@ -294,12 +294,18 @@ h1 {
       font-size: 20px; } }
 
 .starring-box {
-  border: 2px solid #8CA6BF;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  background: -webkit-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+  background: -o-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(70deg, rgba(255, 204, 204, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
   padding: 10px;
-  width: 40%; }
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px; }
   .starring-box p {
-    font-size: 19px;
+    margin: 30px 0;
+    text-align: center;
+    font-size: 30px;
     font-weight: bold; }
   .starring-box .starring-row {
     display: flex;
@@ -307,19 +313,36 @@ h1 {
     flex-direction: row;
     -ms-flex-direction: row;
     justify-content: space-between;
-    align-items: top; }
+    align-items: top;
+    margin-bottom: 25px; }
     .starring-box .starring-row .profile-container {
-      width: 25%;
-      height: 100%; }
-      .starring-box .starring-row .profile-container .profile-picture {
-        max-width: 200px;
-        min-width: 200px;
-        max-height: 285px;
-        min-height: 285px; }
-      .starring-box .starring-row .profile-container .character {
+      margin: 0 auto;
+      text-align: center; }
+      .starring-box .starring-row .profile-container .img-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%; }
+        .starring-box .starring-row .profile-container .img-wrapper .profile-picture {
+          max-width: 100px;
+          min-width: 100px;
+          max-height: 130px;
+          min-height: 130px; }
+      .starring-box .starring-row .profile-container .actor {
+        margin-top: 10px;
         font-size: 19px;
         font-weight: bold; }
+      .starring-box .starring-row .profile-container .character {
+        color: #B3E6A6;
+        opacity: 0.8; }
 
 @media (max-width: 1440px) {
   .starring-box {
-    width: 100%; } }
+    width: auto;
+    margin-top: 0; } }
+
+@media (max-width: 768px) {
+  .starring-box .starring-row .profile-container {
+    margin: 0 10px; } }
