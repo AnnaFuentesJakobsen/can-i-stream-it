@@ -299,11 +299,9 @@ h1 {
   background: -o-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
   background: linear-gradient(70deg, rgba(255, 204, 204, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
   padding: 10px;
-  width: 60%;
-  margin: 0 auto;
-  margin-top: 20px; }
+  width: auto;
+  margin: 0 auto; }
   .starring-box p {
-    margin: 30px 0;
     text-align: center;
     font-size: 30px;
     font-weight: bold; }
@@ -314,10 +312,22 @@ h1 {
     -ms-flex-direction: row;
     justify-content: space-between;
     align-items: top;
-    margin-bottom: 25px; }
+    flex-wrap: wrap;
+    margin: 25px;
+    padding: 0 15em; }
     .starring-box .starring-row .profile-container {
-      margin: 0 auto;
-      text-align: center; }
+      text-align: center;
+      padding: 0 10px; }
+      .starring-box .starring-row .profile-container .actor {
+        margin: 0 auto;
+        font-size: 15px;
+        font-weight: bold;
+        padding-top: 10px; }
+      .starring-box .starring-row .profile-container .character {
+        font-size: 15px;
+        color: #B3E6A6;
+        opacity: 0.8;
+        padding-bottom: 20px; }
       .starring-box .starring-row .profile-container .img-wrapper {
         position: relative;
         overflow: hidden;
@@ -330,19 +340,24 @@ h1 {
           min-width: 100px;
           max-height: 130px;
           min-height: 130px; }
-      .starring-box .starring-row .profile-container .actor {
-        margin-top: 10px;
-        font-size: 19px;
-        font-weight: bold; }
-      .starring-box .starring-row .profile-container .character {
-        color: #B3E6A6;
-        opacity: 0.8; }
 
 @media (max-width: 1440px) {
-  .starring-box {
-    width: auto;
-    margin-top: 0; } }
+  .starring-box .starring-row {
+    padding: 0; }
+    .starring-box .starring-row .profile-container {
+      margin-bottom: 20px;
+      font-size: 15px;
+      padding: 0 15px; }
+      .starring-box .starring-row .profile-container .actor {
+        font-size: 12px; }
+      .starring-box .starring-row .profile-container .character {
+        font-size: 12px; } }
 
 @media (max-width: 768px) {
+  .starring-box p {
+    font-size: 25px;
+    padding-bottom: 30px; } }
+
+@media (max-width: 480px) {
   .starring-box .starring-row .profile-container {
-    margin: 0 10px; } }
+    border-bottom: 1px solid #fff; } }
