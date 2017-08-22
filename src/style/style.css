@@ -81,6 +81,12 @@ h1 {
   filter: opacity(0.2) grayscale(75%); }
 
 .movie-container .logo {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   padding: 10px;
   margin: 0 auto; }
