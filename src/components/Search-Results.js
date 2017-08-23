@@ -8,7 +8,8 @@ class SearchResults extends React.Component {
     this.routeToMovie = this.routeToMovie.bind(this)
   }
 
-  routeToMovie (history, id) {
+  routeToMovie (id) {
+    console.log(id);
     this.props.routeToMovie(id)
   }
 

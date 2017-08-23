@@ -44,7 +44,7 @@ class Movie extends Component {
     return (
       <div className="movie-container">
         <Link to={'/'} className="logo" alt="Can I Stream It?"></Link>
-        <SearchBar imageConfig={this.props.imageConfig}/>
+        <SearchBar imageConfig={this.props.imageConfig} history={this.props.history}/>
         <MovieJumbotron
           backdrop_path={backdrop_path}
           imgCfg={imgCfg}

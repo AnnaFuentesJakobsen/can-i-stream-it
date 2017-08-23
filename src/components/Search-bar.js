@@ -48,7 +48,7 @@ class SearchBar extends Component {
     }
   }
 
-  handleRouteChange (history, id){
+  handleRouteChange (id){
     this.props.history.push(`/movie/${id}`)
     this.clearSearchField()
   }
