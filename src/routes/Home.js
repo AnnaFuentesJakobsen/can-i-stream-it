@@ -9,7 +9,10 @@ class Home extends Component {
         <img src={BgImage} id="bg-img"/>
         <div className="home-wrapper">
           <a href="/"><div className="logo" style={{width:'250px', padding: '40px 0'}}></div></a>
-          <SearchBar imageConfig={this.props.imageConfig} />
+          <SearchBar
+            imageConfig={this.props.imageConfig}
+            history={this.props.history}
+            />
         </div>
       </div>
     );
