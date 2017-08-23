@@ -10,6 +10,7 @@
 }
 .movie-container {
   .logo {
+    @include flexbox(flex, column, center, center);
     width: 100px;
     padding: 10px;
     margin: 0 auto;
@@ -34,7 +35,6 @@
     overflow: hidden;
     h1 {
       span {
-        //@include flexbox(flex, column, center, center);
         display: inline;
         font-size: 30px;
         line-height: 100%

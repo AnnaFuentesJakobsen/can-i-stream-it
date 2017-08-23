@@ -16,7 +16,7 @@ class StarringBox extends Component {
   }
 
   render () {
-    const starring = this.state.cast.slice(0, 5)
+    const starring = this.state.cast.slice(0, 6)
     const imgCfg = this.props.imgCfg
     return (
       <div className="starring-box">
