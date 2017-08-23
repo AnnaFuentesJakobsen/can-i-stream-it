@@ -43,7 +43,7 @@ class SearchBar extends Component {
       } else if (e.keyCode === 13) {
         if(this.state.cursor >= 0) {
           let id = this.state.searchResults[this.state.cursor].id
-          this.handleRouteChange(this.props.history, id)
+          this.handleRouteChange(id)
         }
     }
   }
