@@ -1,5 +1,6 @@
 import React from 'react'
 import PosterPlaceholder from '../assets/poster-placeholder.jpg'
+import onClickOutside from 'react-onclickoutside'
 
 class SearchResults extends React.Component {
 
@@ -9,8 +10,11 @@ class SearchResults extends React.Component {
   }
 
   routeToMovie (id) {
-    console.log(id);
     this.props.routeToMovie(id)
+  }
+
+  handleClickOutside () {
+      this.props.hideResults()
   }
 
   render () {
@@ -53,4 +57,4 @@ class SearchResults extends React.Component {
   }
 }
 
-export default SearchResults;
+export default onClickOutside(SearchResults)
