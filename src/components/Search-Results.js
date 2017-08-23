@@ -25,7 +25,6 @@ class SearchResults extends React.Component {
             className="search-results-list"
             onMouseEnter={() => this.props.clearCursor()}
             style={{display: this.props.showList ? 'block': 'none'}}
-            ref={node => {this.node = node}}
             >
             {
               results !== undefined &&
