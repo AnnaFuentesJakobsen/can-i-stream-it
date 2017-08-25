@@ -41,7 +41,8 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -9999; }
+  z-index: -9999;
+  opacity: 0.3; }
 
 .home-container:after {
   content: '';
@@ -50,11 +51,23 @@ h1 {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
-  background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
-  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  background: #ff1919;
+  background: -moz-linear-gradient(-45deg, #ff1919 0%, #871785 47%, #0015ff 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #ff1919), color-stop(47%, #871785), color-stop(100%, #0015ff));
+  background: -webkit-linear-gradient(-45deg, #ff1919 0%, #871785 47%, #0015ff 100%);
+  background: -o-linear-gradient(-45deg, #ff1919 0%, #871785 47%, #0015ff 100%);
+  background: -ms-linear-gradient(-45deg, #ff1919 0%, #871785 47%, #0015ff 100%);
+  background: linear-gradient(135deg, #ff1919 0%, #871785 47%, #0015ff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1919', endColorstr='#0015ff', GradientType=1 );
   opacity: .6;
   z-index: -1; }
+
+.home-container .search-results-list {
+  background-color: rgba(255, 255, 255, 0.8); }
+
+@media (max-width: 1440px) {
+  .home-container .search-results-list {
+    height: 275px; } }
 
 .home-wrapper {
   display: flex;
@@ -68,7 +81,8 @@ h1 {
   width: 100%; }
 
 .logo {
-  content: url("../assets/LOGO_WHITE.png"); }
+  width: 10%;
+  margin-bottom: 20px; }
 
 .backdrop {
   position: absolute;

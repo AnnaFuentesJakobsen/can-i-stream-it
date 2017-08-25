@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/Search-bar';
 import BgImage from '../assets/cinema.png'
+import Logo from '../assets/logoV2.png'
 
 class Home extends Component {
   render() {
@@ -8,7 +9,7 @@ class Home extends Component {
       <div className="home-container">
         <img src={BgImage} id="bg-img"/>
         <div className="home-wrapper">
-          <a href="/"><div className="logo" style={{width:'250px', padding: '40px 0'}}></div></a>
+          <img src={Logo} className="logo" alt="Logotype"/>
           <SearchBar
             imageConfig={this.props.imageConfig}
             history={this.props.history}
