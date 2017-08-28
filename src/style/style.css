@@ -120,6 +120,24 @@ h1 {
     z-index: 9999;
     width: 60%; }
 
+.movie-container .similar-movies {
+  width: auto;
+  height: 40vh;
+  background-color: white;
+  padding: 10px 15vw; }
+  .movie-container .similar-movies p {
+    margin-top: 0px;
+    font-weight: bolder; }
+  .movie-container .similar-movies .movie-row {
+    display: flex;
+    justify-content: space-between; }
+    .movie-container .similar-movies .movie-row img {
+      display: block;
+      max-width: 100%;
+      height: auto; }
+      .movie-container .similar-movies .movie-row img:hover {
+        cursor: pointer; }
+
 .movie-container .jumbotron {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -196,15 +214,14 @@ h1 {
     margin-top: 15%; }
     .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper .vote-average {
       font-size: 25px; }
-  /*
-  .movie-container {
-    .info-wrapper {
-      .poster-image {
-        width: 400px;
-      }
-    }
-  }
-  */ }
+  .movie-container .similar-movies {
+    height: 43vh; }
+    .movie-container .similar-movies .movie-row img {
+      display: block;
+      max-width: 230px;
+      height: 275px; }
+      .movie-container .similar-movies .movie-row img:hover {
+        cursor: pointer; } }
 
 @media (max-width: 768px) {
   .movie-container .info-wrapper .poster-image {

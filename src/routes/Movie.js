@@ -3,6 +3,7 @@ import { getMovieInfo } from '../utils/api'
 import SearchBar from '../components/Search-bar'
 import MovieJumbotron from '../components/Movie-Jumbotron'
 import StarringBox from '../components/Starring-box'
+import SimilarMovies from '../components/similar-movies'
 import { Link } from 'react-router-dom'
 
 import _ from 'underscore'
@@ -13,7 +14,8 @@ class Movie extends Component {
     super(props)
     this.state = {
       movie: {},
-      castAndCrew: {}
+      castAndCrew: {},
+      similarMovies: []
     }
     this.fetchMovie(props.match.params.movieId)
   }
@@ -23,7 +25,8 @@ class Movie extends Component {
       console.log(data);
       this.setState({
         movie: data,
-        castAndCrew: data.credits
+        castAndCrew: data.credits,
+        similarMovies: data.recommendations.results.slice(0,5)
       })
     }.bind(this))
   }
@@ -31,6 +34,12 @@ class Movie extends Component {
   componentWillReceiveProps (nextProps) {
     if(this.props.match.params.movieId !== nextProps.match.params.movieId) {
       this.fetchMovie(nextProps.match.params.movieId)
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.history.action === "PUSH") {
+      window.scrollTo(0, 0)
     }
   }
 
@@ -60,6 +69,11 @@ class Movie extends Component {
         <StarringBox
           imgCfg={imgCfg}
           cast={this.state.castAndCrew.cast}
+          />
+        <SimilarMovies
+          similarMovies={this.state.similarMovies}
+          imgCfg={imgCfg}
+          history={this.props.history}
           />
       </div>
     );

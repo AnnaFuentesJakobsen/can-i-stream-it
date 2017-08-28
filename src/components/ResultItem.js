@@ -14,7 +14,6 @@ class ResultItem extends Component {
 
   ensureVisible() {
     if (this.props.active) {
-      console.log(ReactDOM.findDOMNode(this));
       this.props.scrollIntoView(ReactDOM.findDOMNode(this));
     }
   }

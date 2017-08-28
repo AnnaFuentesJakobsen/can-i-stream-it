@@ -27,6 +27,28 @@
       width: 60%;
     }
   }
+  .similar-movies {
+    width: auto;
+    height: 40vh;
+    background-color: white;
+    padding: 10px 15vw;
+    p {
+      margin-top: 0px;
+      font-weight: bolder;
+    }
+    .movie-row {
+      display: flex;
+      justify-content: space-between;
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
   .jumbotron {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -51,7 +73,7 @@
             justify-content: flex-start;
             //font-size: 3vw;
             margin: 0px;
-            
+
           }
           .tagline {
             font-size: 1vw;
@@ -139,20 +161,26 @@
 
       }
     }
-  }
-
-
-
-  /*
-  .movie-container {
-    .info-wrapper {
-      .poster-image {
-        width: 400px;
+      .similar-movies {
+        height: 43vh;
+        .movie-row {
+          img {
+            display: block;
+            max-width: 230px;
+            height: 275px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
       }
-    }
   }
-  */
 }
+
+@media (max-width: 1200px) {
+
+}
+
 @media (max-width : 768px) {
   .movie-container {
     .info-wrapper {
@@ -189,4 +217,3 @@
     }
   }
 }
-
