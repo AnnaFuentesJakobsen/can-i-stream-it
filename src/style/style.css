@@ -116,9 +116,9 @@ h1 {
     width: 60%; }
   .movie-container .search-bar .search-results-list {
     position: absolute;
-    top: 170px;
+    top: 69px;
     z-index: 9999;
-    width: 60%; }
+    width: 59%; }
 
 .movie-container .similar-movies {
   width: auto;
