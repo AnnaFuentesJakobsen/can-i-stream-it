@@ -5,6 +5,7 @@ import MovieJumbotron from '../components/Movie-Jumbotron'
 import StarringBox from '../components/Starring-box'
 import SimilarMovies from '../components/similar-movies'
 import { Link } from 'react-router-dom'
+import Logo from '../assets/logoV2.png'
 
 import _ from 'underscore'
 
@@ -52,8 +53,14 @@ class Movie extends Component {
 
     return (
       <div className="movie-container">
-        <Link to={'/'} className="logo" alt="Can I Stream It?"></Link>
-        <SearchBar imageConfig={this.props.imageConfig} history={this.props.history}/>
+        <div className="header">
+          <img
+            className="logo"
+            src={Logo}
+            onClick={() => this.props.history.push('/')}
+            />
+          <SearchBar className="searchbar" imageConfig={this.props.imageConfig} history={this.props.history}/>
+        </div>
         <MovieJumbotron
           backdrop_path={backdrop_path}
           imgCfg={imgCfg}

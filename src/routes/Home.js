@@ -6,7 +6,7 @@ import Logo from '../assets/logoV2.png'
 class Home extends Component {
   render() {
     return (
-      <div className="home-container">
+      <div className="home-container cisi-gradient">
         <img src={BgImage} id="bg-img"/>
         <div className="home-wrapper">
           <img src={Logo} className="logo" alt="Logotype"/>
