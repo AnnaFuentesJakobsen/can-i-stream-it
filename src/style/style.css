@@ -400,3 +400,9 @@ h1 {
 @media (max-width: 480px) {
   .starring-box .starring-row .profile-container {
     border-bottom: 1px solid #fff; } }
+
+img.profile-image {
+  width: 400px; }
+
+.info-content #actor {
+  color: white; }

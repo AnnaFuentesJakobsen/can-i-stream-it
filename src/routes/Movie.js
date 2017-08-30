@@ -10,7 +10,6 @@ import Logo from '../assets/logoV2.png'
 import _ from 'underscore'
 
 class Movie extends Component {
-
   constructor (props) {
     super(props)
     this.state = {
@@ -22,14 +21,14 @@ class Movie extends Component {
   }
 
   fetchMovie (id) {
-    getMovieInfo(id).then(function(data) {
+    getMovieInfo(id).then((data) => {
       console.log(data);
       this.setState({
         movie: data,
         castAndCrew: data.credits,
         similarMovies: data.recommendations.results.slice(0,5)
       })
-    }.bind(this))
+    })
   }
 
   componentWillReceiveProps (nextProps) {
@@ -68,6 +67,7 @@ class Movie extends Component {
         <StarringBox
           imgCfg={imgCfg}
           cast={this.state.castAndCrew.cast}
+          history={this.props.history}
           />
         <SimilarMovies
           similarMovies={this.state.similarMovies}

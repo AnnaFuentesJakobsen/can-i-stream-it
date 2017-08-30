@@ -43,10 +43,19 @@ export function getMovieInfo(id) {
   })
 }
 
+export function getActorInfo(id) {
+  return fetch(BASE_URL_TMDB + 'person/' + id + API_KEY_TMDB).then(function(response) {
+    return response.json()
+  }).then(function(data) {
+    return data
+  })
+}
+
 export function getApiConfiguration() {
   return fetch(BASE_URL_TMDB + 'configuration' + API_KEY_TMDB).then(function(response) {
     return response.json()
   }).then(function(data) {
+    console.log(data)
     return data
   })
 }

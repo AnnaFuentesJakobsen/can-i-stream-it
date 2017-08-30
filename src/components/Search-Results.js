@@ -29,7 +29,10 @@ class SearchResults extends React.Component {
     let cursor = this.props.cursor
     let results = this.props.results
     let imgCfg = this.props.imageConfig
-
+    const active = {
+      backgroundColor: "rgba(255,204,204,0.5)",
+      borderRadius: "10px"
+    }
     return (
           <div
             className="search-results-list"
