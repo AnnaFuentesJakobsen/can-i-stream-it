@@ -5,7 +5,9 @@ import StreamingBox from '../components/streaming-box'
 class MovieJumbotron extends Component {
 
   render() {
-    const { imgCfg, backdrop_path, poster_path, title, release_date, tagline, vote_average, vote_count, overview, original_title } = this.props
+    const { backdrop_path, poster_path, title, release_date, tagline, vote_average, vote_count, overview, original_title } = this.props.movie
+    const imgCfg = this.props.imgCfg
+    const releaseYear = release_date === '' ? '????' : new Date(release_date).getFullYear()
     return (
       <div className="jumbotron">
         <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
@@ -16,7 +18,7 @@ class MovieJumbotron extends Component {
               className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
               />
             <div className="info-content col-md-10 col-lg-6">
-                <h1>{title} <span style={{opacity: '0.5'}}>({new Date(release_date).getFullYear()})</span></h1>
+                <h1>{title} <span style={{opacity: '0.5'}}>({releaseYear})</span></h1>
                 {tagline &&
                 <p><em className="tagline">"{tagline}"</em></p>}
                 <div className="info-row">
@@ -30,6 +32,7 @@ class MovieJumbotron extends Component {
               </div>
               <StreamingBox
                 movieTitle={original_title}
+                releaseYear={releaseYear}
                 />
             </div>
           </div>

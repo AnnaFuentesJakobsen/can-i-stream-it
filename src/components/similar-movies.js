@@ -12,6 +12,7 @@ class SimilarMovies extends Component {
             similarMovies.map(function(movie) {
               return (
                 <img
+                  key={movie.id}
                   src={imgCfg.base_url + 'w300' + movie.poster_path}
                   onClick={()=> history.push(`/movie/${movie.id}`)}
                 />

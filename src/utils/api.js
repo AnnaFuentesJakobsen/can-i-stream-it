@@ -14,15 +14,16 @@ export function searchMovie(movieTitle){
   })
 }
 
-export function checkStreamingSite(movieTitle){
-
-  const itunesData = fetch(BASE_URL_ITUNES + movieTitle + '&entity=movie').then(function(response) {
+export function checkStreamingSite(movieTitle, releaseYear){
+  console.log(releaseYear);
+  const netflixYearQuery = releaseYear === '????' ? '' : '&year=' + releaseYear
+  const itunesData = fetch(BASE_URL_ITUNES + movieTitle + '&media=movie').then(function(response) {
     return response.json()
   }).then(function(data) {
     return data.results
   })
 
-  const netflixData = fetch(BASE_URL_NETFLIX + movieTitle).then(function(response) {
+  const netflixData = fetch(BASE_URL_NETFLIX + movieTitle + netflixYearQuery).then(function(response) {
      return response.json()
   }).then(function(data) {
     return data

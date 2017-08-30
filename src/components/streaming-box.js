@@ -7,22 +7,29 @@ class StreamingBox extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      netflix: {},
-      itunes: {},
+      netflix: false,
+      itunes: false,
       movieTitle: props.movieTitle
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.state.movieTitle !== nextProps.movieTitle) {
-      checkStreamingSite(nextProps.movieTitle).then(function(data) {
+      checkStreamingSite(nextProps.movieTitle, nextProps.releaseYear).then(function(data) {
+        let onItunes;
+        if(data[0].length > 0) {
+          onItunes = new Date(data[0][0].releaseDate).getFullYear() === nextProps.releaseYear
+        } else {
+          onItunes = false
+        }
         this.setState({
-          itunes: data[0],
-          netflix: data[1]
+          itunes: onItunes,
+          netflix: data[1].errorcode !== undefined
         })
       }.bind(this))
     }
   }
+
 
   render() {
     return (
@@ -31,17 +38,17 @@ class StreamingBox extends Component {
           <span className="service-name">
             iTunes:
           </span>
-          {this.state.itunes.length === 0 ?
-            <CrossIcon className="cross-icon"/>
-            :
+          {this.state.itunes ?
             <TickIcon className="tick-icon"/>
+            :
+            <CrossIcon className="cross-icon"/>
           }
         </div>
         <div className="service">
           <span className="service-name">
             Netflix:
           </span>
-          {this.state.netflix.errorcode !== undefined ?
+          {this.state.netflix ?
             <CrossIcon className="cross-icon"/>
             :
             <TickIcon className="tick-icon"/>

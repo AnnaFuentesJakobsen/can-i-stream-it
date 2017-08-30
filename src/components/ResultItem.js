@@ -19,7 +19,7 @@ class ResultItem extends Component {
   }
 
   render() {
-    const {result, cursor, i, imgCfg, active} = this.props
+    const {result, imgCfg, active} = this.props
     const releaseYear = result.release_date !== '' ? new Date(result.release_date).getFullYear(): '????'
     const activeStyle = {
       backgroundColor: "rgba(255,204,204,0.5)",
