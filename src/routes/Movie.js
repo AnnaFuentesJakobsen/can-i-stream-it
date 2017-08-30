@@ -45,7 +45,7 @@ class Movie extends Component {
   }
 
   render() {
-    const {title, release_date, runtime, tagline, overview, genres, backdrop_path, poster_path, vote_average, vote_count} = this.state.movie
+    const {title, release_date, tagline, overview, genres, backdrop_path, poster_path, vote_average, vote_count} = this.state.movie
     const imgCfg = this.props.imageConfig
     const genreNames = _.map(genres, function(item) {
       return <li key={item.name}>{item.name}</li>
@@ -55,16 +55,8 @@ class Movie extends Component {
       <div className="movie-container">
         <Header imageConfig={this.props.imageConfig} history={this.props.history}/>
         <MovieJumbotron
-          backdrop_path={backdrop_path}
+          movie={this.state.movie}
           imgCfg={imgCfg}
-          poster_path={poster_path}
-          title={title}
-          release_date={release_date}
-          tagline={tagline}
-          vote_average={vote_average}
-          vote_count={vote_count}
-          overview={overview}
-          original_title={this.state.movie.original_title}
           />
         <StarringBox
           imgCfg={imgCfg}
