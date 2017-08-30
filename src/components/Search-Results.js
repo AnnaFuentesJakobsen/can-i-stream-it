@@ -21,6 +21,7 @@ class SearchResults extends React.Component {
       backgroundColor: "rgba(255,204,204,0.5)",
       borderRadius: "10px"
     }
+    
     return (
           <div
             className="search-results-list"

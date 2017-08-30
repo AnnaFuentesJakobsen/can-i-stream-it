@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import _ from 'underscore'
 
 class Movie extends Component {
-
   constructor (props) {
     super(props)
     this.state = {
@@ -60,6 +59,7 @@ class Movie extends Component {
         <StarringBox
           imgCfg={imgCfg}
           cast={this.state.castAndCrew.cast}
+          history={this.props.history}
           />
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Placeholder from '../assets/profile-placeholder.png'
+import { Link } from 'react-router-dom'
 
 class StarringBox extends Component {
   constructor (props) {
@@ -25,7 +26,7 @@ class StarringBox extends Component {
           {
             starring.map(function(actor) {
               return (
-                <div className="profile-container" key={actor.id}>
+                <div className="profile-container" onClick={() => this.props.history.push(`/actor/${actor.id}`) } key={actor.id}>
                   <div className="img-wrapper">
                     <img
                       className="profile-picture"
@@ -36,7 +37,7 @@ class StarringBox extends Component {
                 <div className="character">{actor.character}</div>
                 </div>
               )
-            })
+            }.bind(this))
           }
         </div>
       </div>
