@@ -357,6 +357,8 @@ h1 {
     .starring-box .starring-row .profile-container {
       text-align: center;
       padding: 0 10px; }
+      .starring-box .starring-row .profile-container:hover {
+        cursor: pointer; }
       .starring-box .starring-row .profile-container .actor {
         margin: 0 auto;
         font-size: 15px;
