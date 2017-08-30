@@ -19,6 +19,9 @@
     .profile-container {
       text-align: center;
       padding: 0 10px;
+      &:hover {
+        cursor: pointer;
+      }
       .actor {
         margin: 0 auto;
         font-size: 15px;

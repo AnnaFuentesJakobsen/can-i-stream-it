@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getMovieInfo } from '../utils/api'
 import SearchBar from '../components/Search-bar'
+import Header from '../components/Header'
 import MovieJumbotron from '../components/Movie-Jumbotron'
 import StarringBox from '../components/Starring-box'
 import SimilarMovies from '../components/similar-movies'
@@ -52,14 +53,7 @@ class Movie extends Component {
 
     return (
       <div className="movie-container">
-        <div className="header">
-          <img
-            className="logo"
-            src={Logo}
-            onClick={() => this.props.history.push('/')}
-            />
-          <SearchBar className="searchbar" imageConfig={this.props.imageConfig} history={this.props.history}/>
-        </div>
+        <Header imageConfig={this.props.imageConfig} history={this.props.history}/>
         <MovieJumbotron
           movie={this.state.movie}
           imgCfg={imgCfg}

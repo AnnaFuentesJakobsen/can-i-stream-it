@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { getActorInfo } from '../utils/api';
-import { Link } from 'react-router-dom'
 import StarringBox from '../components/Starring-box';
 import SearchBar from '../components/Search-bar';
 import ActorInfo from '../components/Actor-info';
+import Logo from '../assets/logoV2.png';
+import Header from '../components/Header';
 
 class Actor extends Component {
   constructor(props) {
@@ -34,8 +35,7 @@ class Actor extends Component {
     const imgCfg = this.props.imageConfig
     return(
       <div className="movie-container">
-        <Link to={'/'} className="logo" alt="Can I Stream It?"></Link>
-        <SearchBar imageConfig={this.props.imageConfig} history={this.props.history}/>
+        <Header imageConfig={this.props.imageConfig} history={this.props.history}/>
         <ActorInfo 
           imgCfg={imgCfg}
           biography={biography}
