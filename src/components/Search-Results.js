@@ -1,16 +1,28 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import PosterPlaceholder from '../assets/poster-placeholder.jpg'
+import onClickOutside from 'react-onclickoutside'
+import ResultItem from './ResultItem'
 
 class SearchResults extends React.Component {
 
   constructor () {
     super()
     this.routeToMovie = this.routeToMovie.bind(this)
+    this.scrollElementIntoViewIfNeeded = this.scrollElementIntoViewIfNeeded.bind(this)
   }
 
   routeToMovie (id) {
-    console.log(id);
     this.props.routeToMovie(id)
+  }
+
+  handleClickOutside () {
+      this.props.hideResults()
+  }
+
+  scrollElementIntoViewIfNeeded(domNode) {
+    var containerDomNode = ReactDOM.findDOMNode(this)
+    domNode.scrollIntoView(false)
   }
 
   render () {
@@ -21,7 +33,6 @@ class SearchResults extends React.Component {
       backgroundColor: "rgba(255,204,204,0.5)",
       borderRadius: "10px"
     }
-    
     return (
           <div
             className="search-results-list"
@@ -31,21 +42,15 @@ class SearchResults extends React.Component {
             {
               results !== undefined &&
               results.map(function(result, i) {
-                const releaseYear = result.release_date !== '' ? new Date(result.release_date).getFullYear(): '????'
-                return (
-                    <div
-                      className="results-item"
-                      style={cursor === i ? active : {}}
-                      onClick={() => {this.routeToMovie(result.id)}}
-                      key={result.id}
-                      >
-                      {result.poster_path !== null ?
-                        <img src={imgCfg.base_url + imgCfg.poster_sizes[0] + result.poster_path} />
-                        :
-                        <img src={PosterPlaceholder}/>
-                      }
-                      <p>{result.original_title} ({releaseYear})</p>
-                    </div>
+                return(
+                  <ResultItem
+                    key={result.id}
+                    result={result}
+                    routeToMovie={this.routeToMovie}
+                    imgCfg={imgCfg}
+                    active={cursor===i}
+                    scrollIntoView={this.scrollElementIntoViewIfNeeded}
+                    />
                 )
               }.bind(this))
             }
@@ -54,4 +59,4 @@ class SearchResults extends React.Component {
   }
 }
 
-export default SearchResults;
+export default onClickOutside(SearchResults)

@@ -38,3 +38,17 @@ h1 {
   display: inline;
   color: $font-white;
 }
+
+.cisi-gradient {
+  &:after {
+    background: rgba(255,25,25,1);
+    background: -moz-linear-gradient(-45deg, rgba(255,25,25,1) 0%, rgba(135,23,133,1) 47%, rgba(0,21,255,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,25,25,1)), color-stop(47%, rgba(135,23,133,1)), color-stop(100%, rgba(0,21,255,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(255,25,25,1) 0%, rgba(135,23,133,1) 47%, rgba(0,21,255,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(255,25,25,1) 0%, rgba(135,23,133,1) 47%, rgba(0,21,255,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(255,25,25,1) 0%, rgba(135,23,133,1) 47%, rgba(0,21,255,1) 100%);
+    background: linear-gradient(135deg, rgba(255,25,25,1) 0%, rgba(135,23,133,1) 47%, rgba(0,21,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1919', endColorstr='#0015ff', GradientType=1 );
+  }
+
+}

@@ -3,7 +3,9 @@ import { getMovieInfo } from '../utils/api'
 import SearchBar from '../components/Search-bar'
 import MovieJumbotron from '../components/Movie-Jumbotron'
 import StarringBox from '../components/Starring-box'
+import SimilarMovies from '../components/similar-movies'
 import { Link } from 'react-router-dom'
+import Logo from '../assets/logoV2.png'
 
 import _ from 'underscore'
 
@@ -12,24 +14,32 @@ class Movie extends Component {
     super(props)
     this.state = {
       movie: {},
-      castAndCrew: {}
+      castAndCrew: {},
+      similarMovies: []
     }
     this.fetchMovie(props.match.params.movieId)
   }
 
   fetchMovie (id) {
-    getMovieInfo(id).then(function(data) {
+    getMovieInfo(id).then((data) => {
       console.log(data);
       this.setState({
         movie: data,
-        castAndCrew: data.credits
+        castAndCrew: data.credits,
+        similarMovies: data.recommendations.results.slice(0,5)
       })
-    }.bind(this))
+    })
   }
 
   componentWillReceiveProps (nextProps) {
     if(this.props.match.params.movieId !== nextProps.match.params.movieId) {
       this.fetchMovie(nextProps.match.params.movieId)
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.history.action === "PUSH") {
+      window.scrollTo(0, 0)
     }
   }
 
@@ -42,8 +52,14 @@ class Movie extends Component {
 
     return (
       <div className="movie-container">
-        <Link to={'/'} className="logo" alt="Can I Stream It?"></Link>
-        <SearchBar imageConfig={this.props.imageConfig} history={this.props.history}/>
+        <div className="header">
+          <img
+            className="logo"
+            src={Logo}
+            onClick={() => this.props.history.push('/')}
+            />
+          <SearchBar className="searchbar" imageConfig={this.props.imageConfig} history={this.props.history}/>
+        </div>
         <MovieJumbotron
           backdrop_path={backdrop_path}
           imgCfg={imgCfg}
@@ -59,6 +75,11 @@ class Movie extends Component {
         <StarringBox
           imgCfg={imgCfg}
           cast={this.state.castAndCrew.cast}
+          history={this.props.history}
+          />
+        <SimilarMovies
+          similarMovies={this.state.similarMovies}
+          imgCfg={imgCfg}
           history={this.props.history}
           />
       </div>

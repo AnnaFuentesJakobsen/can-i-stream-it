@@ -8,6 +8,7 @@
    top: 0;
    left: 0;
    z-index: -9999;
+   opacity: 0.3;
   }
   &:after {
     content: '';
@@ -16,11 +17,20 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: -webkit-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: -o-linear-gradient(top left, #002f4b, #dc4225);
-    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .6;
     z-index: -1;
+  }
+  .search-results-list {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .logo {
+    width: 10%;
+    margin-bottom: 20px;
+  }
+  @media (max-width : 1440px) {
+    .search-results-list {
+      height: 275px;
+    }
   }
 }
 
@@ -30,8 +40,3 @@
   height: 75%;
   width: 100%;
 }
-
-.logo {
-  content:url('../assets/LOGO_WHITE.png');
-}
-
