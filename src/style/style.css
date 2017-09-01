@@ -12,7 +12,7 @@
             1. Body
 ====================================================================
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:300,400,600,700,800");
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0px;
@@ -42,6 +42,20 @@ h1 {
   background: -ms-linear-gradient(-45deg, #ff1919 0%, #871785 47%, #0015ff 100%);
   background: linear-gradient(135deg, #ff1919 0%, #871785 47%, #0015ff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1919', endColorstr='#0015ff', GradientType=1 ); }
+
+.logo {
+  width: 100px;
+  height: 100px; }
+  .logo:hover {
+    cursor: pointer; }
+
+.flex-column {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: flex-start;
+  align-items: default; }
 
 .home-container #bg-img {
   min-height: 100%;
@@ -96,6 +110,10 @@ h1 {
   background-position: center;
   filter: opacity(0.2) grayscale(75%); }
 
+.movie-container .detail {
+  color: white;
+  font-weight: 300; }
+
 .movie-container .header {
   display: flex;
   justify-content: flex-start;
@@ -146,83 +164,89 @@ h1 {
   position: relative;
   height: 100%;
   overflow: hidden; }
-  .movie-container .jumbotron h1 span {
-    display: inline;
-    font-size: 30px;
-    line-height: 100%; }
+  .movie-container .jumbotron .trailer-button {
+    width: 150px;
+    height: 45px;
+    border: 1px solid white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 45px;
+    color: white;
+    background: black;
+    padding: 0px 5px 0px 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-left: 15px; }
+    .movie-container .jumbotron .trailer-button:hover {
+      cursor: pointer;
+      color: black;
+      background: white; }
   .movie-container .jumbotron .info-wrapper {
     margin-top: 50px; }
     .movie-container .jumbotron .info-wrapper .poster-image {
-      margin-right: 20px;
-      width: 15%; }
-    .movie-container .jumbotron .info-wrapper .info-content h1 {
-      justify-content: flex-start;
+      width: 15%;
+      border: 1px solid white;
+      padding: 0px; }
+    .movie-container .jumbotron .info-wrapper .info-content .movie-title {
+      font-weight: 700;
+      font-size: 60px;
       margin: 0px; }
+    .movie-container .jumbotron .info-wrapper .info-content .release-year {
+      font-family: 'Open Sans Condensed';
+      font-weight: 100; }
     .movie-container .jumbotron .info-wrapper .info-content .tagline {
-      font-size: 1vw;
-      color: #B3E6A6; }
+      color: #ff9999;
+      font-weight: 300; }
     .movie-container .jumbotron .info-wrapper .info-content .info-row {
       display: flex;
       display: -ms-flexbox;
       flex-direction: row;
       -ms-flex-direction: row;
       justify-content: flex-start;
-      align-items: center;
-      margin-top: 25px; }
-      .movie-container .jumbotron .info-wrapper .info-content .info-row .votes {
-        flex-shrink: 0;
-        padding: 5px;
-        background-color: #ff9999;
-        width: 4vw;
-        height: 4vw;
-        margin-right: 30px;
-        border: 5px solid #FFCCCC;
-        border-radius: 50%;
-        text-align: center;
-        margin-top: 10px; }
-        .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper {
-          margin-top: 25%; }
-        .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-average {
-          color: #fff;
-          width: 4vw;
-          margin-left: 0;
-          font-size: 1vw; }
-          .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-average small {
-            font-size: 0.6vw;
-            color: #e6e6e6; }
-        .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .vote-count {
-          color: #B3E6A6;
-          font-size: 0.5vw;
-          color: #fff;
-          opacity: 0.5; }
+      align-items: center; }
     .movie-container .jumbotron .info-wrapper .info-content .overview {
       max-width: 1000px;
       color: #fff;
       letter-spacing: 1px;
-      line-height: 2em; }
+      font-weight: 300; }
     .movie-container .jumbotron .info-wrapper .info-content .genre-list li {
-      color: white;
+      color: #ff9999;
       display: inline;
-      margin-right: 5px; }
+      margin-right: 15px;
+      font-weight: 300; }
+
+.votes {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; }
+  .votes .star-icon {
+    color: #ff9999;
+    font-size: 65px; }
+  .votes .vote-average {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: larger; }
+  .votes .vote-count {
+    color: #fff;
+    opacity: .5;
+    font-weight: 300; }
 
 @media (max-width: 1440px) {
   .service {
     background-color: red; }
-  .movie-container .jumbotron h1 {
-    font-size: 30px; }
-    .movie-container .jumbotron h1 span {
-      font-size: 20px; }
-  .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper {
-    margin-top: 15%; }
-    .movie-container .jumbotron .info-wrapper .info-content .info-row .votes .votes-wrapper .vote-average {
-      font-size: 25px; }
-  .movie-container .similar-movies {
+  .similar-movies {
     height: 43vh; }
-    .movie-container .similar-movies .movie-row img {
+    .similar-movies .movie-row img {
       display: block;
       max-width: 230px;
       height: 275px; }
-      .movie-container .similar-movies .movie-row img:hover {
+      .similar-movies .movie-row img:hover {
         cursor: pointer; } }
 
 @media (max-width: 768px) {
@@ -296,34 +320,35 @@ h1 {
       border-radius: 10px; }
 
 .streaming-box {
-  display: flex;
-  display: -ms-flexbox;
-  flex-direction: row;
-  -ms-flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 50px;
-  color: #fff; }
-  .streaming-box .service {
+  color: #fff;
+  margin-top: 5px; }
+  .streaming-box span {
+    font-size: smaller;
+    font-weight: bolder; }
+  .streaming-box .services {
     display: flex;
     display: -ms-flexbox;
     flex-direction: row;
     -ms-flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 50px;
-    border: 2px solid #FFCCCC;
-    border-radius: 60px;
-    padding: 0 40px; }
-    .streaming-box .service .service-name {
-      font-size: 25px; }
-    .streaming-box .service .cross-icon {
-      font-size: 35px;
-      color: #de2929; }
-    .streaming-box .service .tick-icon {
-      font-size: 35px;
-      color: #4dbb26; }
+    margin-top: 5px; }
+    .streaming-box .services .service {
+      display: flex;
+      display: -ms-flexbox;
+      flex-direction: column;
+      -ms-flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 45px;
+      border: 1px solid #B3E6A6;
+      background: black;
+      border-radius: 10px;
+      margin-right: 20px; }
+      .streaming-box .services .service .service-logo {
+        width: 80px;
+        height: auto; }
 
 @media (max-width: 1440px) {
   .streaming-box .service {

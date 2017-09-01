@@ -9,6 +9,10 @@
   filter: opacity(.2) grayscale(75%);
 }
 .movie-container {
+  .detail {
+    color: white;
+    font-weight: 300;
+  }
   .header {
     display: flex;
     justify-content: flex-start;
@@ -64,80 +68,89 @@
     position: relative;
     height: 100%;
     overflow: hidden;
-    h1 {
-      span {
-        display: inline;
-        font-size: 30px;
-        line-height: 100%
+    .trailer-button {
+      width: 150px;
+      height: 45px;
+      border: 1px solid white;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 45px;
+      color: white;
+      background: black;
+      padding: 0px 5px 0px 5px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-left: 15px;
+      &:hover {
+        cursor: pointer;
+        // border: 1px solid black;
+        color: black;
+        background: white;
       }
     }
     .info-wrapper {
       margin-top: 50px;
       .poster-image {
-        margin-right: 20px;
         width: 15%;
+        border: 1px solid white;
+        padding: 0px;
       }
       .info-content {
-        h1 {
-          justify-content: flex-start;
-          //font-size: 3vw;
+        .movie-title {
+          font-weight: 700;
+          font-size: 60px;
           margin: 0px;
 
         }
+        .release-year {
+          font-family: 'Open Sans Condensed';
+          font-weight: 100;
+        }
         .tagline {
-          font-size: 1vw;
-          color: $font-h1;
+          color: $base-pink-dark;
+          font-weight: 300;
         }
         .info-row {
           @include flexbox(flex, row, flex-start, center);
-          margin-top: 25px;
-          .votes {
-            flex-shrink: 0;
-            padding: 5px;
-            background-color: $base-pink-dark;
-            width: 4vw;
-            height: 4vw;
-            margin-right: 30px;
-            border: 5px solid $base-pink;
-            border-radius: 50%;
-            text-align: center;
-            margin-top: 10px;
-            .votes-wrapper {
-              margin-top: 25%;
-            }
-            .vote-average {
-              color: $font-white;
-              width: 4vw;
-              margin-left: 0;
-              font-size: 1vw;
-              small {
-                font-size: 0.6vw;
-                color: $font-search-light;
-              }
-            }
-            .vote-count {
-              color: $font-h1;
-              font-size: 0.5vw;
-              color: $font-white;
-              opacity: 0.5;
-            }
-          }
+
         }
         .overview {
           max-width: 1000px;
           color: $font-white;
           letter-spacing: 1px;
-          line-height: 2em;
+          font-weight: 300;
         }
         .genre-list {
           li {
-            color: white;
+            color: $base-pink-dark;
             display: inline;
-            margin-right: 5px;
+            margin-right: 15px;
+            font-weight: 300;
           }
         }
       }
     }
+  }
+}
+
+.votes {
+  @include flexbox(flex, row, flex-start, center);
+  .star-icon {
+    color: $base-pink-dark;
+    font-size: 65px;
+  }
+  .vote-average {
+    color: $font-white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: larger;
+  }
+  .vote-count {
+    color: $font-white;
+    opacity: .5;
+    font-weight: 300;
   }
 }
 
@@ -146,30 +159,6 @@
   .service {
     background-color: red;
   }
-  .movie-container {
-    .jumbotron {
-      h1 {
-        font-size: 30px;
-        span {
-          font-size: 20px;
-        }
-      }
-      .info-wrapper {
-        .info-content {
-          .info-row {
-            .votes {
-              .votes-wrapper {
-                margin-top: 15%;
-                .vote-average {
-                  font-size: 25px;
-                }
-              }
-            }
-          }
-        }
-
-      }
-    }
     .similar-movies {
       height: 43vh;
       .movie-row {
@@ -183,7 +172,6 @@
         }
       }
     }
-  }
 }
 
 @media (max-width: 1200px) {

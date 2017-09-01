@@ -57,4 +57,9 @@ h1 {
   height: 100px;
   &:hover {
     cursor: pointer;
+  }
+}
+
+.flex-column {
+  @include flexbox(flex, column, flex-start, default)
 }

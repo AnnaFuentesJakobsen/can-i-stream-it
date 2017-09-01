@@ -45,6 +45,7 @@ class Movie extends Component {
   }
 
   render() {
+    console.log(this.props);
     const {title, release_date, tagline, overview, genres, backdrop_path, poster_path, vote_average, vote_count} = this.state.movie
     const imgCfg = this.props.imageConfig
     const genreNames = _.map(genres, function(item) {
