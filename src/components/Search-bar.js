@@ -80,7 +80,7 @@ class SearchBar extends Component {
           placeholder="Search movie"
           onChange={this.handleChange}
           value={this.state.searchText}
-          style={{fontFamily: 'Quicksand'}}
+          style={{fontFamily: 'Open Sans'}}
           onKeyDown={this.handleKeyPress}
         />
         <SearchResults
