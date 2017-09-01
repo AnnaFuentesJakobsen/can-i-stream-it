@@ -43,6 +43,12 @@ h1 {
   background: linear-gradient(135deg, #ff1919 0%, #871785 47%, #0015ff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1919', endColorstr='#0015ff', GradientType=1 ); }
 
+.logo {
+  width: 100px;
+  height: 100px; }
+  .logo:hover {
+    cursor: pointer; }
+
 .home-container #bg-img {
   min-height: 100%;
   min-width: 1024px;
@@ -67,15 +73,11 @@ h1 {
 .home-container .search-results-list {
   background-color: rgba(255, 255, 255, 0.8); }
 
-.home-container .logo {
+.home-container .home-logo {
   width: 10%;
   margin-bottom: 20px; }
 
-@media (max-width: 1440px) {
-  .home-container .search-results-list {
-    height: 275px; } }
-
-.home-wrapper {
+.home-container .home-wrapper {
   display: flex;
   display: -ms-flexbox;
   flex-direction: column;
@@ -85,6 +87,22 @@ h1 {
   position: fixed;
   height: 75%;
   width: 100%; }
+  .home-container .home-wrapper .search-bar {
+    width: 40%; }
+
+@media (max-width: 1440px) {
+  .home-container .home-logo {
+    width: 30%; }
+  .home-container .home-wrapper .search-bar {
+    width: 100%; }
+    .home-container .home-wrapper .search-bar input {
+      margin-left: 7%;
+      width: 80%;
+      font-size: 15px; }
+  .home-container .search-results-list {
+    margin-left: 8%;
+    height: 400px;
+    width: 80%; } }
 
 .backdrop {
   position: absolute;
@@ -242,7 +260,7 @@ h1 {
     width: 10px; } }
 
 .search-bar input {
-  width: 650px;
+  width: 100%;
   color: #666;
   font-size: 20px;
   padding: 10px;
@@ -272,7 +290,7 @@ h1 {
 
 .search-results-list {
   height: 500px;
-  width: 665px;
+  width: 40%;
   overflow-y: auto;
   border: 4px solid #FFCCCC;
   position: absolute;
@@ -404,7 +422,105 @@ h1 {
     border-bottom: 1px solid #fff; } }
 
 img.profile-image {
-  width: 400px; }
+  width: 350px; }
 
-.info-content #actor {
-  color: white; }
+.actor-name {
+  color: #fff; }
+
+.actor-biography {
+  color: #fff; }
+
+/*
+====================================================================
+            2. Home
+====================================================================
+*/
+/* ----------- PHONES ----------- */
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 20%; }
+  .home-container .home-wrapper .search-bar .search-results-list {
+    height: 240px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 5%; }
+  .home-container .home-wrapper {
+    position: relative; }
+    .home-container .home-wrapper .search-bar .search-results-list {
+      height: 200px; } }
+
+/* ----------- iPhone 6 ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .home-container .home-wrapper .search-bar .search-results-list {
+    height: 290px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 6%; }
+  .home-container .home-wrapper {
+    position: relative; }
+    .home-container .home-wrapper .search-bar .search-results-list {
+      height: 220px; } }
+
+/* ----------- iPhone 6+ ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .home-container .home-wrapper .search-bar .search-results-list {
+    height: 350px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 6%; }
+  .home-container .home-wrapper {
+    position: relative; }
+    .home-container .home-wrapper .search-bar .search-results-list {
+      height: 240px; } }
+
+/* ----------- TABLETS ----------- */
+/* ----------- iPad 1 and 2 ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 15%; }
+  .home-container .home-wrapper .search-bar .search-results-list {
+    height: 500px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 8%; }
+  .home-container .home-wrapper {
+    position: relative; }
+    .home-container .home-wrapper .search-bar .search-results-list {
+      height: 500px; } }
+
+/* ----------- iPad Pro ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .home-container .home-logo {
+    margin: 2% 0;
+    width: 15%; }
+  .home-container .home-wrapper .search-bar .search-results-list {
+    height: 560px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .home-container .home-logo {
+    width: 8%; }
+  .home-container .home-wrapper {
+    position: relative; }
+    .home-container .home-wrapper .search-bar .search-results-list {
+      height: 560px; } }

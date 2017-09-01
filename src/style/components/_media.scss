@@ -1,0 +1,234 @@
+/*
+====================================================================
+            2. Home
+====================================================================
+*/
+
+
+/* ----------- PHONES ----------- */
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 20%;
+    }
+    .home-wrapper {
+      .search-bar {
+        .search-results-list{
+          height: 240px;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 5%;
+    }
+    .home-wrapper {
+      position: relative;
+      .search-bar {
+        .search-results-list{
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+  .home-container {
+    .home-logo {
+
+    }
+    .home-wrapper {
+      .search-bar {
+        .search-results-list{
+          height: 290px;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 6%;
+    }
+    .home-wrapper {
+      position: relative;
+      .search-bar {
+        .search-results-list{
+          height: 220px;
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+  .home-container {
+    .home-logo {
+
+    }
+    .home-wrapper {
+      .search-bar {
+        .search-results-list{
+          height: 350px;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 6%;
+    }
+    .home-wrapper {
+      position: relative;
+      .search-bar {
+        .search-results-list{
+          height: 240px;
+        }
+      }
+    }
+  }
+}
+
+/* ----------- TABLETS ----------- */
+
+/* ----------- iPad 1 and 2 ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 15%;
+    }
+    .home-wrapper {
+      .search-bar {
+        .search-results-list{
+          height: 500px;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 8%;
+    }
+    .home-wrapper {
+      position: relative;
+      .search-bar {
+        .search-results-list{
+          height: 500px;
+        }
+      }
+    }
+  }
+}
+
+/* ----------- iPad Pro ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+  .home-container {
+    .home-logo {
+      margin: 2% 0;
+      width: 15%;
+    }
+    .home-wrapper {
+      .search-bar {
+        .search-results-list{
+          height: 560px;
+        }
+      }
+    }
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+  .home-container {
+    .home-logo {
+      width: 8%;
+    }
+    .home-wrapper {
+      position: relative;
+      .search-bar {
+        .search-results-list{
+          height: 560px;
+        }
+      }
+    }
+  }
+}

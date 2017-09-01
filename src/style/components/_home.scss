@@ -23,20 +23,41 @@
   .search-results-list {
     background-color: rgba(255, 255, 255, 0.8);
   }
-  .logo {
+  .home-logo {
     width: 10%;
     margin-bottom: 20px;
   }
-  @media (max-width : 1440px) {
-    .search-results-list {
-      height: 275px;
+  .home-wrapper {
+    @include flexbox(flex, column, center, center);
+    position: fixed;
+    height: 75%;
+    width: 100%;
+    .search-bar {
+      width: 40%;
     }
   }
 }
 
-.home-wrapper {
-  @include flexbox(flex, column, center, center);
-  position: fixed;
-  height: 75%;
-  width: 100%;
+@media (max-width : 1440px) {
+  .home-container {
+    .home-logo {
+      width: 30%;
+    }
+    .home-wrapper {
+      .search-bar {
+        width: 100%;
+        input {
+          margin-left: 7%;
+          width: 80%;
+          font-size: 15px;
+        } 
+      }
+    }
+    .search-results-list {
+      margin-left: 8%;
+      height: 400px;
+      width: 80%;
+    }
+  }
 }
+
