@@ -6,9 +6,7 @@ function SpokenLanguages ({languages = []}) {
                 .map(item => item.name)
                 .join('/')
   return (
-    <span
-      className="detail"
-      style={{marginRight: '20px'}}>
+    <span>
         {languageList}
     </span>
   )

@@ -1,0 +1,18 @@
+.votes {
+  @include flexbox(flex, row, flex-start, center);
+  .star-icon {
+    color: $base-pink-dark;
+    font-size: 65px;
+  }
+  .vote-average {
+    color: $font-white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: larger;
+  }
+  .vote-count {
+    color: $font-white;
+    opacity: .5;
+    font-weight: 300;
+  }
+}

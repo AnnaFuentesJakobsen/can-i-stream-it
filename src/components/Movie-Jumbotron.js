@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import Placeholder from '../assets/poster-placeholder.jpg'
 import StreamingBox from '../components/streaming-box'
-import {FaPlay as PlayIcon} from 'react-icons/lib/fa'
-import {convertMinutesToHoursAndMinutes} from '../utils/utils'
-import SpokenLanguages from './Spoken-Languages'
 import Genres from './Genres'
 import Votes from './Votes'
+import TitleBar from './Title-bar'
+import StarringBox from '../components/Starring-box'
 
 
 class MovieJumbotron extends Component {
 
   render() {
     console.log(this.props.movie);
-    const { backdrop_path,
+    const {
+      castAndCrew,
+      imgCfg,
+      history,
+      movie
+    } = this.props
+    const {
+      backdrop_path,
       poster_path,
       title,
       release_date,
@@ -24,29 +30,24 @@ class MovieJumbotron extends Component {
       runtime,
       spoken_languages,
       genres
-      } = this.props.movie
-    const imgCfg = this.props.imgCfg
+      } = movie
     const releaseYear = release_date === '' ? '????' : new Date(release_date).getFullYear()
     return (
       <div className="jumbotron">
         <div className="backdrop" style={{backgroundImage: `url(${imgCfg.base_url}original${backdrop_path})`}}></div>
-        <div className="info-wrapper container-fluid">
-          <div className="row">
+        <div className="info-wrapper">
             <img
               src={poster_path !== null ? imgCfg.base_url + 'w300' + poster_path : Placeholder}
-              className="poster-image col-md-2 col-lg-4 col-lg-offset-2"
+              className="poster-image"
               />
-            <div className="info-content col-md-10 col-lg-6">
-                <div className="info-row">
-                  <h1 className="movie-title">{title} <span className="release-year">({releaseYear})</span></h1>
-                  <div className="trailer-button"><PlayIcon/>PLAY TRAILER</div>
-                </div>
-                <div className="info-row">
-                  <SpokenLanguages languages={spoken_languages}/>
-                  <span className="detail">{convertMinutesToHoursAndMinutes(runtime)}</span>
-                </div>
-                {tagline &&
-                <p><em className="tagline">"{tagline}"</em></p>}
+            <div className="info-content">
+              <TitleBar
+                title={title}
+                releaseYear={releaseYear}
+                runtime={runtime}
+                spokenLanguages={spoken_languages}
+                tagline={tagline}
+                />
                 <div className="overview">{overview}</div>
                 <Genres genres={genres} />
                 <Votes voteAverage={vote_average} voteCount={vote_count}/>
@@ -54,9 +55,13 @@ class MovieJumbotron extends Component {
                 movieTitle={original_title}
                 releaseYear={releaseYear}
                 />
+                <StarringBox
+                  imgCfg={imgCfg}
+                  cast={castAndCrew.cast}
+                  history={history}
+                  />
             </div>
           </div>
-      </div>
     </div>
     );
   }
