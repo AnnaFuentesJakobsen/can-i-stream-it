@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { searchMovie } from '../utils/api'
 import SearchResults from './Search-Results'
 
+
 class SearchBar extends Component {
 
   constructor() {

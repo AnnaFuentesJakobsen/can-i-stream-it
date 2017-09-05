@@ -3,11 +3,13 @@
 }
 
 img.profile-image {
-  width: 400px;
+  width: 350px;
 }
 
-.info-content {
-  #actor {
-    color: white;
-  }
+.actor-name {
+  color: $font-white;
 }
+.actor-biography {
+  color: $font-white;
+}
+
