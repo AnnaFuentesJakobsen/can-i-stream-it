@@ -1,24 +1,25 @@
 .streaming-box {
-  @include flexbox(flex, row, space-around, center);
-  margin-top: 50px;
   color: $font-white;
-  .service {
+  margin-top: 5px;
+  span {
+    font-size: smaller;
+    font-weight: bolder;
+  }
+  .services {
     @include flexbox(flex, row, flex-start, center);
-    background-color: rgba(255, 255, 255, 0.5);
-    height: 50px;
-    border: 2px solid $base-pink;
-    border-radius: 60px;
-    padding: 0 40px;
-    .service-name {
-      font-size: 25px;
-    }
-    .cross-icon {
-      font-size: 35px;
-      color: #de2929;
-    }
-    .tick-icon {
-      font-size: 35px;
-      color: #4dbb26;
+    margin-top: 5px;
+    .service {
+      @include flexbox(flex, column, center, center);
+      width: 200px;
+      height: 45px;
+      border: 1px solid $font-h1;
+      background: black;
+      border-radius: 10px;
+      margin-right: 20px;
+      .service-logo {
+        width: 80px;
+        height: 25px;
+      }
     }
   }
 }
@@ -34,5 +35,3 @@
     }
   }
 }
-
-

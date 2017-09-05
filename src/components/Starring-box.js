@@ -17,11 +17,14 @@ class StarringBox extends Component {
   }
 
   render () {
-    const starring = this.state.cast.slice(0, 6)
+    const starring = this.state.cast.slice(0, 4)
     const imgCfg = this.props.imgCfg
     return (
       <div className="starring-box">
-        <p>Top Billed Cast</p>
+        <div>
+          <span className="title">Top Billed Cast</span>
+          <a href="#" className="full-cast">Full cast and crew</a>
+        </div>
         <div className="starring-row">
           {
             starring.map(function(actor) {
@@ -29,12 +32,11 @@ class StarringBox extends Component {
                 <div className="profile-container" onClick={() => this.props.history.push(`/actor/${actor.id}`) } key={actor.id}>
                   <div className="img-wrapper">
                     <img
-                      className="profile-picture"
                       src={actor.profile_path !== null ? imgCfg.base_url + 'w300' + actor.profile_path : Placeholder}
                     />
                   </div>
-                <div className="actor">{actor.name}</div>
                 <div className="character">{actor.character}</div>
+                <div className="actor">{actor.name}</div>
                 </div>
               )
             }.bind(this))

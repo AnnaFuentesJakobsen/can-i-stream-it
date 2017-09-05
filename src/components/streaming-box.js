@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { checkStreamingSite } from '../utils/api'
 import { TiTick as TickIcon, TiTimes as CrossIcon } from 'react-icons/lib/ti'
-//import { FaSmileO as TickIcon, FaFrownO as CrossIcon } from 'react-icons/lib/fa'
+import NetflixLogo from '../assets/Netflix_logo.png'
+import ItunesLogo from '../assets/itunes_logo.png'
+import StreamingService from './Streaming-service'
 
 class StreamingBox extends Component {
   constructor (props) {
@@ -34,28 +36,13 @@ class StreamingBox extends Component {
   render() {
     return (
       <div className="streaming-box">
-        <div className="service">
-          <span className="service-name">
-            iTunes:
-          </span>
-          {this.state.itunes ?
-            <TickIcon className="tick-icon"/>
-            :
-            <CrossIcon className="cross-icon"/>
-          }
-        </div>
-        <div className="service">
-          <span className="service-name">
-            Netflix:
-          </span>
-          {this.state.netflix ?
-            <CrossIcon className="cross-icon"/>
-            :
-            <TickIcon className="tick-icon"/>
-          }
+        <span>CAN I STREAM IT?</span>
+        <div className="services">
+          <StreamingService image={NetflixLogo}/>
+          <StreamingService image ={ItunesLogo}/>
         </div>
       </div>
-    );
+    )
   }
 
 }

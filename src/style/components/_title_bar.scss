@@ -1,0 +1,53 @@
+.title-bar {
+  .trailer-button {
+    width: 150px;
+    height: 35px;
+    border: 1px solid white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 35px;
+    color: white;
+    background: black;
+    padding: 0px 5px 0px 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    .play-icon {
+      position: relative;
+      bottom: 1px;
+    }
+    &:hover {
+      cursor: pointer;
+      // border: 1px solid black;
+      color: black;
+      background: white;
+    }
+  }
+  .movie-title{
+    margin: 0px;
+    .release-year {
+      font-family: 'Open Sans Condensed';
+      margin-left: 10px;
+    }
+    .trailer-button {
+      display: inline-block;
+    }
+  }
+  .inline-details {
+    position: relative;
+    bottom: 5px;
+    left: 3px;
+    .tagline {
+      color: $base-pink-dark;
+      margin-left: 25px;
+    }
+    span {
+      font-size: 15px;
+      color: $font-white;
+      margin-right: 10px;
+      font-weight: 300;
+    }
+  }
+}

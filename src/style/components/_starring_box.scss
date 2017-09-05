@@ -1,104 +1,141 @@
 .starring-box {
-  color: $font-white;
-  background: -webkit-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
-  background: -o-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
-  background: linear-gradient(70deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
-  padding: 10px;
-  width: auto;
-  margin: 0 auto;
-  p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
+  .title {
+    color: $font-white;
+    margin-right: 15px;
+  }
+  .full-cast {
+    text-decoration: none;
+    color: $base-pink-dark;
   }
   .starring-row {
-    @include flexbox(flex, row, space-between, top);
-    flex-wrap: wrap;
-    margin: 25px;
-    padding: 0 15em;
+    @include flexbox(flex, row, space-between, flex-start);
+    margin-top: 5px;
     .profile-container {
-      text-align: center;
-      padding: 0 10px;
-      &:hover {
-        cursor: pointer;
+      width: 190px;
+      .img-wrapper {
+        width:185px;
+        height: 185px;
+        overflow: hidden;
+        border: 1px solid $base-pink-dark;
+        img {
+          max-width: 185px;
+          position:relative;
+          bottom: 17px;
+        }
+      }
+      .character{
+        color: $font-white;
+        font-weight: 300;
       }
       .actor {
-        margin: 0 auto;
-        font-size: 15px;
-        font-weight: bold;
-        padding-top: 10px;
-      }
-      .character {
-        font-size: 15px;
-        color: $base-green;
-        opacity: 0.8;
-        padding-bottom: 20px;
-      }
-      .img-wrapper {
-        position: relative;
-        overflow: hidden;
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        .profile-picture {
-          max-width: 100px;
-          min-width: 100px;
-          max-height: 130px;
-          min-height: 130px;
-        }
+        color: $base-pink-dark;
+        font-weight: 300;
       }
     }
   }
 }
 
-//MEDIA QUERIES
-@media (max-width : 1440px) {
-  .starring-box {
-    .starring-row {
-      padding: 0;
-      .profile-container {
-        margin-bottom: 20px;
-        font-size: 15px;
-        padding: 0 15px;
-        .actor {
-          font-size: 12px;
-        }
-        .character {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .starring-box {
-    p {
-      font-size: 25px;
-      padding-bottom: 30px;
-    }
-    .starring-row {
-      .profile-container {
-
-      }
-    }
-  }
-
-}
-@media (max-width : 480px) {
-  .starring-box {
-    .starring-row {
-      .profile-container {
-        border-bottom: 1px solid $font-white;
-      }
-    }
-  }
-
-}
-@media (max-width : 320px) {
-
-}
-@media (max-width : 240px) {
-
-}
+// .starring-box {
+//   color: $font-white;
+//   background: -webkit-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
+//   background: -o-linear-gradient(340deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
+//   background: linear-gradient(70deg, rgba(255, 204, 204, 0.5) 0%, rgba(255,255,255,0.1) 100%);
+//   padding: 10px;
+//   width: auto;
+//   margin: 0 auto;
+//   p {
+//     text-align: center;
+//     font-size: 30px;
+//     font-weight: bold;
+//   }
+//   .starring-row {
+//     @include flexbox(flex, row, space-between, top);
+//     flex-wrap: wrap;
+//     margin: 25px;
+//     padding: 0 15em;
+//     .profile-container {
+//       text-align: center;
+//       padding: 0 10px;
+//       &:hover {
+//         cursor: pointer;
+//       }
+//       .actor {
+//         margin: 0 auto;
+//         font-size: 15px;
+//         font-weight: bold;
+//         padding-top: 10px;
+//       }
+//       .character {
+//         font-size: 15px;
+//         color: $base-green;
+//         opacity: 0.8;
+//         padding-bottom: 20px;
+//       }
+//       .img-wrapper {
+//         position: relative;
+//         overflow: hidden;
+//         margin: 0 auto;
+//         width: 100px;
+//         height: 100px;
+//         border-radius: 50%;
+//         .profile-picture {
+//           max-width: 100px;
+//           min-width: 100px;
+//           max-height: 130px;
+//           min-height: 130px;
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// //MEDIA QUERIES
+// @media (max-width : 1440px) {
+//   .starring-box {
+//     .starring-row {
+//       padding: 0;
+//       .profile-container {
+//         margin-bottom: 20px;
+//         font-size: 15px;
+//         padding: 0 15px;
+//         .actor {
+//           font-size: 12px;
+//         }
+//         .character {
+//           font-size: 12px;
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// @media (max-width: 768px) {
+//   .starring-box {
+//     p {
+//       font-size: 25px;
+//       padding-bottom: 30px;
+//     }
+//     .starring-row {
+//       .profile-container {
+//
+//       }
+//     }
+//   }
+//
+// }
+// @media (max-width : 480px) {
+//   .starring-box {
+//     .starring-row {
+//       .profile-container {
+//         border-bottom: 1px solid $font-white;
+//       }
+//     }
+//   }
+//
+// }
+// @media (max-width : 320px) {
+//
+// }
+// @media (max-width : 240px) {
+//
+// }
