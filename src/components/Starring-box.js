@@ -33,6 +33,7 @@ class StarringBox extends Component {
                   <div className="img-wrapper">
                     <img
                       src={actor.profile_path !== null ? imgCfg.base_url + 'w300' + actor.profile_path : Placeholder}
+                      style={{bottom: actor.profile_path === null && '0'}}
                     />
                   </div>
                 <div className="character">{actor.character}</div>

@@ -7,7 +7,6 @@ function StreamingService({image, active}) {
         src={image}
         alt="Service logo"
         className="service-logo"
-        align="middle"
       />
     </div>
   )
